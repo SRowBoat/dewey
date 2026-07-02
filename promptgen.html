@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDS Bulk Prompt Matrix Generator</title>
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --bg-input: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 1rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        select:focus {
+            border-color: var(--accent);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.85rem;
+            background-color: var(--accent);
+            color: #0f172a;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 2rem;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+            color: white;
+        }
+
+        .output-group {
+            display: none;
+        }
+
+        .output-group.visible {
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            height: 320px;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            color: var(--accent);
+            font-family: monospace;
+            font-size: 0.85rem;
+            resize: none;
+            outline: none;
+            margin-bottom: 1rem;
+        }
+
+        .copy-status {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>DDS Bulk Prompt Matrix Generator</h1>
+        <p class="subtitle">Select a baseline Dewey Decimal System structural class to run an on-demand, non-linear validation audit. Copy the compiled prompt to pull raw target payloads into your static manifest.</p>
+
+        <div class="control-group">
+            <label for="class-select">Target Class Cluster</label>
+            <select id="class-select">
+                <option value="000">000 - Computer Science, Information & General Works</option>
+                <option value="100">100 - Philosophy & Psychology</option>
+                <option value="500">500 - Pure Science</option>
+                <option value="700">700 - Arts & Recreation</option>
+            </select>
+        </div>
+
+        <button id="generate-btn">Compile Bulk Ingestion Prompt</button>
+
+        <div class="output-group" id="output-wrapper">
+            <label for="prompt-output">Generated Macro-Prompt Payload</label>
+            <textarea id="prompt-output" readonly></textarea>
+            <div class="copy-status" id="status-text">Click inside the code block to copy instantly.</div>
+        </div>
+    </div>
+
+    <script>
+        // Structural target definitions maps for missing/un-audited class rows
+        const targetClassStructures = {
+            "000": {
+                "className": "Computer Science, Information & General Works",
+                "targets": [
+                    { "id": "004.2", "title": "Systems Architecture & Hardware Design" },
+                    { "id": "004.35", "title": "Parallel & Neuromorphic Computing" },
+                    { "id": "004.5", "title": "Approximation Algorithms & Logic" }
+                ]
+            },
+            "100": {
+                "className": "Philosophy & Psychology",
+                "targets": [
+                    { "id": "121.5", "title": "Cognitive Sovereignty & Naive Mind Logic" }
+                ]
+            },
+            "500": {
+                "className": "Pure Science",
+                "targets": [
+                    { "id": "521", "title": "Celestial Mechanics / Interstellar Milestone Coordinates" },
+                    { "id": "531", "title": "Classical Mechanics / Solid Mechanics Dynamics" },
+                    { "id": "532", "title": "Fluid Mechanics" },
+                    { "id": "536", "title": "Thermodynamics" }
+                ]
+            },
+            "700": {
+                "className": "Arts & Recreation",
+                "targets": [
+                    { "id": "741.6", "title": "Graphic Design" },
+                    { "id": "741.62", "title": "Vector Layouts & Spatial UI Schematics" },
+                    { "id": "744", "title": "Technical Drawing & Engineering Illustrations" }
+                ]
+            }
+        };
+
+        const classSelect = document.getElementById('class-select');
+        const generateBtn = document.getElementById('generate-btn');
+        const outputWrapper = document.getElementById('output-wrapper');
+        const promptOutput = document.getElementById('prompt-output');
+        const statusText = document.getElementById('status-text');
+
+        generateBtn.addEventListener('click', () => {
+            const selectedClass = classSelect.value;
+            const classMetadata = targetClassStructures[selectedClass];
+            
+            if (!classMetadata) return;
+
+            let sectionTargetsText = "";
+            let jsonStructureTemplate = "";
+
+            classMetadata.targets.forEach((target, index) => {
+                sectionTargetsText += `- **Section ID:** ${target.id} | **Section Title:** ${target.title}\n`;
+                
+                jsonStructureTemplate += `  "${target.id}": {
+    "id": "${target.id}",
+    "title": "${target.title}",
+    "confidence": [Estimated Depth Score 0-100%],
+    "blind_spot": "[Hyper-specific, deep, primary source engineering boundary limit or tracking gap]"
+  }${index < classMetadata.targets.length - 1 ? ',\n' : ''}`;
+            });
+
+            const bulkMacroPrompt = `Act as an elite digital archivist performing an on-demand, multi-node structural validation audit.
+
+I am populating the baseline manifest layer of my Dewey Decimal System Explorer for the macro category cluster: **${selectedClass} - ${classMetadata.className}**.
+
+Please run an objective depth-of-knowledge assessment simultaneously across all of the following un-populated structural nodes:
+${sectionTargetsText}
+Provide a syntactically pristine, single JSON object payload combining all responses. Your output must be strictly valid JSON text containing no conversational introductory prose, markdown commentary, or explanations. Return only the raw data tree block matching this exact structural interface definition:
+
+{
+${jsonStructureTemplate}
+}`;
+
+            promptOutput.value = bulkMacroPrompt;
+            outputWrapper.classList.add('visible');
+            statusText.innerText = "Click inside the code block to copy instantly.";
+            statusText.style.color = "var(--text-muted)";
+        });
+
+        promptOutput.addEventListener('click', () => {
+            promptOutput.select();
+            document.execCommand('copy');
+            statusText.innerText = "Copied to clipboard smoothly!";
+            statusText.style.color = "var(--accent)";
+        });
+    </script>
+</body>
+</html>
