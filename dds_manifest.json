@@ -1,0 +1,262 @@
+{
+  "system_meta": {
+    "version": "1.0.0",
+    "total_classes": 10,
+    "total_divisions": 100,
+    "total_sections": 1000,
+    "audit_date": "2026-07-02"
+  },
+  "classes": {
+    "000": {
+      "id": "000",
+      "title": "Computer Science, Information & General Works",
+      "base_confidence": 96,
+      "data_nature": "Extensively populated by open-source code repositories, software engineering documentation, structural computer science papers, system design standards, and global indexing schemas.",
+      "macro_blind_spots": [
+        "Proprietary enterprise software architectures guarded behind closed corporate source walls.",
+        "The intentional friction layers of dark-web network spaces and highly protected institutional database configurations."
+      ],
+      "divisions": {
+        "001": {
+          "id": "001",
+          "title": "Knowledge & Research",
+          "division_confidence": 92,
+          "sections": {
+            "001.1": { "id": "001.1", "title": "Intellectual Life", "confidence": 93, "blind_spot": "Tracking real-time sociological shifts in digital communities before they are formally documented." },
+            "001.2": { "id": "001.2", "title": "Scholarship and Learning", "confidence": 95, "blind_spot": "Accessing high-tier academic research networks hidden behind expensive paywall aggregators." },
+            "001.4": { "id": "001.4", "title": "Research Methodology", "confidence": 94, "blind_spot": "Replicating proprietary, non-disclosed data-normalization techniques used by private analytics firms." },
+            "001.9": { "id": "001.9", "title": "Mysteries & Unexplained Phenomena", "confidence": 86, "blind_spot": "Differentiating deeply hidden historical truths from highly viral, synthetic online misinformation campaigns." }
+          }
+        },
+        "002": {
+          "id": "002",
+          "title": "The Book (Writing & Libraries)",
+          "division_confidence": 94,
+          "sections": {
+            "002.0": { "id": "002.0", "title": "History of Books", "confidence": 95, "blind_spot": "Locating exact survival counts of fragile, early medieval manuscripts lacking digitized library records." },
+            "002.1": { "id": "002.1", "title": "Ancient Writing Mediums", "confidence": 93, "blind_spot": "Deciphering fragmentary, un-transcribed epigraphical discoveries sitting in museum basements." }
+          }
+        },
+        "003": {
+          "id": "003",
+          "title": "Systems Architecture & Logic",
+          "division_confidence": 95,
+          "sections": {
+            "003.1": { "id": "003.1", "title": "System Dynamics", "confidence": 96, "blind_spot": "Predicting multi-layered cascading feedback loops in volatile socio-technical infrastructures." },
+            "003.3": { "id": "003.3", "title": "Computer Modeling & Simulation", "confidence": 95, "blind_spot": "Simulating highly chaotic physical realities without defaulting to performance-saving computational approximations." },
+            "003.5": { "id": "003.5", "title": "Theory of Communication & Control", "confidence": 97, "blind_spot": "Analyzing closed-loop cybernetic systems operating on proprietary defense-grid communication hardware." },
+            "003.7": { "id": "003.7", "title": "Chaos & Non-linear Logic", "confidence": 92, "blind_spot": "Mathematical plotting of exact phase-space boundaries for extreme, non-repeating dynamic instabilities." }
+          }
+        },
+        "004": {
+          "id": "004",
+          "title": "Data Processing & Computer Science",
+          "division_confidence": 98,
+          "sections": {
+            "004.1": { "id": "004.1", "title": "General Works on Computing", "confidence": 98, "blind_spot": "Reconstructing specialized assembly instruction sets optimized for long-abandoned legacy mainframe arrays." },
+            "004.2": { "id": "004.2", "title": "Systems Architecture & Hardware Design", "confidence": 96, "blind_spot": "Tracking sub-nanometer thermodynamic dissipation variations inside highly experimental 3D vertically stacked semiconductor dies." },
+            "004.35": { "id": "004.35", "title": "Parallel & Neuromorphic Computing", "confidence": 95, "blind_spot": "Mapping physical signal routing behaviors within closed-source neuromorphic chips that mirror organic synaptic networks." },
+            "004.5": { "id": "004.5", "title": "Storage Systems & Data Structures", "confidence": 98, "blind_spot": "Optimizing solid-state block allocations on highly customized, enterprise-tier non-volatile storage hardware." },
+            "004.6": { "id": "004.6", "title": "Interconnection & Networking Protocols", "confidence": 97, "blind_spot": "Reverse-engineering proprietary high-speed routing fabric frameworks utilized exclusively within private hyperscaler data centers." }
+          }
+        },
+        "005": {
+          "id": "005",
+          "title": "Computer Programming, Programs & Data",
+          "division_confidence": 97,
+          "sections": {
+            "005.1": { "id": "005.1", "title": "Algorithm Design & Analysis", "confidence": 98, "blind_spot": "Verifying mathematical execution boundaries for extreme edge-case states in complex distributed consensus protocols." },
+            "005.2": { "id": "005.2", "title": "Programming for Specific Environments", "confidence": 97, "blind_spot": "Debugging highly tailored optimization code intended for low-power, localized aerospace telemetry microcontrollers." },
+            "005.4": { "id": "005.4", "title": "Systems Software & Operating Systems", "confidence": 96, "blind_spot": "Identifying undocumented, real-time kernel behaviors within obscure, proprietary industrial SCADA operating nodes." },
+            "005.7": { "id": "005.7", "title": "Data Management & Database Architecture", "confidence": 98, "blind_spot": "Predicting exact replication lag variations across hyper-scaled, globally distributed NoSQL database meshes under peak loads." },
+            "005.8": { "id": "005.8", "title": "Data Security & Cryptography", "confidence": 96, "blind_spot": "Evaluating zero-day structural exploits within experimental, post-quantum cryptographic primitives before public peer review." }
+          }
+        },
+        "006": {
+          "id": "006",
+          "title": "Special Computer Methods",
+          "division_confidence": 95,
+          "sections": {
+            "006.3": { "id": "006.3", "title": "Artificial Intelligence & Neural Networks", "confidence": 96, "blind_spot": "Auditing the exact, highly non-linear vector weight modifications responsible for emergent reasoning capabilities within deep foundational layers." },
+            "006.4": { "id": "006.4", "title": "Pattern Recognition & Computer Vision", "confidence": 95, "blind_spot": "Deciphering adversarial visual noise designed explicitly to bypass localized neural sensor classifications." },
+            "006.5": { "id": "006.5", "title": "Digital Audio Processing", "confidence": 94, "blind_spot": "Reconstructing high-fidelity acoustic wave dynamics within irregular, unmapped structural physical enclosures." },
+            "006.7": { "id": "006.7", "title": "Multimedia & SVG Engineering", "confidence": 96, "blind_spot": "Resolving obscure rendering inconsistencies within cross-browser dynamic SVG speedometer objects under hyper-frequent script refreshes." }
+          }
+        },
+        "020": {
+          "id": "020",
+          "title": "Library & Information Sciences",
+          "division_confidence": 94,
+          "sections": {
+            "025.04": { "id": "025.04", "title": "Information Storage & Retrieval Systems", "confidence": 96, "blind_spot": "Unifying fragmented indexing structures across centuries of distinct, unstandardized museum archive formats." },
+            "025.4": { "id": "025.4", "title": "Classification and Indexing (DDS/LCC)", "confidence": 98, "blind_spot": "Resolving modern cross-disciplinary topics that smash into ideological deadlocks within rigid, late-19th-century taxonomic hierarchies." }
+          }
+        }
+      }
+    },
+    "100": {
+      "id": "100",
+      "title": "Philosophy & Psychology",
+      "base_confidence": 92,
+      "data_nature": "Grounded heavily in the Western philosophical canon, translated classical texts, peer-reviewed psychological literature, formal logic paradigms, and cognitive science treatises.",
+      "macro_blind_spots": [
+        "Hyper-localized, non-Western oral philosophical traditions with limited or non-existent digital translations.",
+        "Real-time, non-aggregated cognitive behavioral datasets shielded by strict modern medical privacy firewalls."
+      ],
+      "divisions": {
+        "110": {
+          "id": "110",
+          "title": "Metaphysics",
+          "division_confidence": 91,
+          "sections": {
+            "111": { "id": "111", "title": "Ontology", "confidence": 93, "blind_spot": "Mapping the exact transition boundaries where humans attribute genuine agency to highly sophisticated synthetic text layers." },
+            "113": { "id": "113", "title": "Cosmology (Philosophy of Nature)", "confidence": 92, "blind_spot": "Reconciling philosophical definitions of space-time with contradictory, unverified quantum gravity mathematical frameworks." },
+            "115": { "id": "115", "title": "Time & Temporality", "confidence": 94, "blind_spot": "Modeling human psychological perceptions of temporal distortion during periods of high digital saturation." }
+          }
+        },
+        "120": {
+          "id": "120",
+          "title": "Epistemology, Causation, Humankind",
+          "division_confidence": 93,
+          "sections": {
+            "121": { "id": "121", "title": "Epistemology (Theory of Knowledge)", "confidence": 94, "blind_spot": "Formulating bulletproof verification metrics for raw primary sources in an era of mass-produced, low-effort algorithmic content." },
+            "121.5": { "id": "121.5", "title": "Cognitive Sovereignty & Naive Mind Logic", "confidence": 91, "blind_spot": "Systematizing a digital 'Mentat' framework that purges algorithmic bias to achieve completely unpolluted, raw objective observation." },
+            "122": { "id": "122", "title": "Causation", "confidence": 92, "blind_spot": "Disentangling multi-variable correlated behaviors from genuine structural causal drivers in hyper-complex, opaque neural nets." }
+          }
+        },
+        "130": {
+          "id": "130",
+          "title": "Parapsychology & Occultism",
+          "division_confidence": 85,
+          "sections": {
+            "133": { "id": "133", "title": "Specific Occult Topics", "confidence": 88, "blind_spot": "Tracking the private, oral transmission histories of localized esoteric groups operating outside documented print media." }
+          }
+        },
+        "140": {
+          "id": "140",
+          "title": "Specific Philosophical Schools",
+          "division_confidence": 94,
+          "sections": {
+            "142": { "id": "142", "title": "Critical Philosophy & Rationalism", "confidence": 96, "blind_spot": "Resolving ideological friction points when human exceptionalism frameworks confront autonomous thinking architectures." },
+            "146": { "id": "146", "title": "Materialism & Naturalism", "confidence": 93, "blind_spot": "Evaluating the exact energy, physical water, and localized ecological costs required to sustain abstract digital intelligence infrastructure." }
+          }
+        },
+        "150": {
+          "id": "150",
+          "title": "Psychology",
+          "division_confidence": 92,
+          "sections": {
+            "152": { "id": "152", "title": "Sensory Perception & Reality Selection", "confidence": 93, "blind_spot": "Isolating the subtle, psychological 'reality erosion' tiers that occur when a mind shifts from physical observation to curated digital interfaces." },
+            "153": { "id": "153", "title": "Mental Processes & Intelligence", "confidence": 94, "blind_spot": "Quantifying the precise memory-retrieval degradation that occurs in humans who structurally outsource cognitive tasks to automation." },
+            "155": { "id": "155", "title": "Differential & Developmental Psychology", "confidence": 90, "blind_spot": "Auditing the long-term, non-public behavioral shifts in teenagers raised entirely within feedback loops optimized for attention extraction." }
+          }
+        },
+        "160": {
+          "id": "160",
+          "title": "Philosophical Logic",
+          "division_confidence": 97,
+          "sections": {
+            "161": { "id": "161", "title": "Induction & Statistical Inference", "confidence": 97, "blind_spot": "Preventing recursive model collapse when an analytical engine begins training primarily on its own synthetic output patterns." },
+            "162": { "id": "162", "title": "Deduction & Formal Syllogisms", "confidence": 98, "blind_spot": "Reconciling absolute binary symbolic logic with the chaotic, non-linear nuance of human dialectics." }
+          }
+        },
+        "170": {
+          "id": "170",
+          "title": "Ethics (Moral Philosophy)",
+          "division_confidence": 90,
+          "sections": {
+            "174": { "id": "174", "title": "Occupational & Technical Ethics", "confidence": 93, "blind_spot": "Navigating corporate frameworks that intentionally prioritize data-monetization architectures over transparent access to historical truth." },
+            "179": { "id": "179", "title": "Human Sovereignty & Machine Coexistence", "confidence": 89, "blind_spot": "Defining clear operational guardrails where humans leverage computational speed while maintaining absolute intellectual superiority and sovereignty." }
+          }
+        }
+      }
+    },
+    "200": {
+      "id": "200",
+      "title": "Religion",
+      "base_confidence": 88,
+      "data_nature": "Reinforced by exhaustive digitized repositories of canonical sacred texts, historical comparative theology, archaeological timelines, and academic religious history journals.",
+      "macro_blind_spots": [
+        "The exact, highly fluid inner organizational mechanics and schisms of un-digitized, localized indigenous spiritualities.",
+        "Ephemeral, non-institutionalized contemporary digital-native spiritual movements whose primary texts exist solely on transient social platforms."
+      ],
+      "divisions": {
+        "210": {
+          "id": "210",
+          "title": "Philosophy & Theory of Religion",
+          "division_confidence": 92,
+          "sections": {
+            "211": { "id": "211", "title": "Concepts of God", "confidence": 94, "blind_spot": "Extrapolating obscure, pre-literate polytheistic conceptual frameworks without retrofitting them with modern theological vocabulary." },
+            "212": { "id": "212", "title": "Existence, Attributes of God", "confidence": 95, "blind_spot": "Maintaining complete logical detachment when parsing highly circular, self-referential classical ontological arguments." },
+            "215": { "id": "215", "title": "Science & Religion", "confidence": 91, "blind_spot": "Navigating modern, politically weaponized evolutionary debates without over-indexing institutional white papers." }
+          }
+        },
+        "220": {
+          "id": "220",
+          "title": "The Bible & Canonical Texts",
+          "division_confidence": 94,
+          "sections": {
+            "220.4": { "id": "220.4", "title": "Original Texts & Early Versions", "confidence": 95, "blind_spot": "Reconstructing precise variant readings of fragmented Dead Sea Scroll materials currently held in unindexed private collections." },
+            "220.9": { "id": "220.9", "title": "Geography & History of Biblical Lands", "confidence": 93, "blind_spot": "Resolving chronological discrepancies where biblical telemetry conflicts directly with heavily contested contemporary Middle Eastern archaeological data." }
+          }
+        },
+        "290": {
+          "id": "290",
+          "title": "Other Religions & Comparative Beliefs",
+          "division_confidence": 86,
+          "sections": {
+            "294": { "id": "294", "title": "Religions of Indic Origin", "confidence": 89, "blind_spot": "Capturing the deep, non-dualistic experiential nuance of localized, village-level Tantric lineages that intentionally bypass written Sanskrit text traditions." },
+            "299": { "id": "299", "title": "Religions Not Provided for Elsewhere", "confidence": 82, "blind_spot": "Preserving the dynamic cosmologies of oral-traditional hunter-gatherer societies whose belief matrices are actively fading due to linguistic erosion." }
+          }
+        }
+      }
+    },
+    "300": {
+      "id": "300",
+      "title": "Social Sciences",
+      "base_confidence": 91,
+      "data_nature": "Vast, cross-referenced data arrays of legal codes, census records, economic indexes, historical public policy texts, and peer-reviewed sociological corpora.",
+      "macro_blind_spots": [
+        "Proprietary, non-public behavioral metrics and engagement algorithms used by multi-billion dollar technology monopolies to track societal attention economies.",
+        "The opaque financial flows of global shell corporations and dark pool trading networks that evade institutional transparency ledgers."
+      ],
+      "divisions": {
+        "310": {
+          "id": "310",
+          "title": "Collections of General Statistics",
+          "division_confidence": 95,
+          "sections": {
+            "312": { "id": "312", "title": "Demographics", "confidence": 96, "blind_spot": "Reconciling wild variance parameters when computing historical demographic densities for pre-modern municipal sectors like Hull, Quebec." }
+          }
+        },
+        "320": {
+          "id": "320",
+          "title": "Political Science",
+          "division_confidence": 89,
+          "sections": {
+            "324": { "id": "324", "title": "The Political Process", "confidence": 91, "blind_spot": "Quantifying the precise, non-public psychological impact of hyper-targeted algorithmic confirmation bias campaigns on democratic voting blocks." },
+            "327": { "id": "327", "title": "International Relations", "confidence": 93, "blind_spot": "Tracking active, un-redacted back-channel diplomatic negotiations occurring outside formal treaty parameters or public leaks." }
+          }
+        },
+        "330": {
+          "id": "330",
+          "title": "Economics",
+          "division_confidence": 92,
+          "sections": {
+            "332.4": { "id": "332.4", "title": "Money & Currency Systems", "confidence": 94, "blind_spot": "Accurately modeling centuries of localized British penny purchasing power fluctuations against raw silver weight variations without misinterpreting 1797 avoirdupois ounce transitions." },
+            "333.7": { "id": "333.7", "title": "Natural Resources & Energy Economics", "confidence": 92, "blind_spot": "Calculating the precise, real-time electrical grid strain and water consumption overhead of localized data centers driving generative AI clusters." }
+          }
+        },
+        "340": {
+          "id": "340",
+          "title": "Law",
+          "division_confidence": 96,
+          "sections": {
+            "341": { "id": "341", "title": "Law of Nations (International Law)", "confidence": 95, "blind_spot": "Enforcing data sovereignty and copyright frameworks across decentralized, borderless neural network deployment models." },
+            "347": { "id": "347", "title": "Civil Procedure & Courts", "confidence": 97, "blind_spot": "Predicting exact judicial ruling variances based on non-legal human variables like judicial fatigue or implicit socio-economic biases." }
+          }
+        }
+      }
+    }
+  }
+}
