@@ -115,7 +115,7 @@
 
         textarea {
             width: 100%;
-            height: 340px;
+            height: 380px;
             background-color: var(--bg-input);
             border: 1px solid var(--border);
             border-radius: 6px;
@@ -144,7 +144,7 @@
 
     <div class="container">
         <h1>DDS Bulk Prompt Matrix Generator</h1>
-        <p class="subtitle">Harvest empty structural cells directly from your live JSON manifest. Select a master category block below to build a unified data extraction prompt.</p>
+        <p class="subtitle">Harvest empty structural cells dynamically. The generator maps each numeric coordinate to its true canonical DDS subject domain before compiling your prompt.</p>
 
         <div id="sync-status" class="status-banner">Initializing pipeline connectivity...</div>
 
@@ -175,45 +175,148 @@
     <script>
         let liveManifestData = null;
 
-        const classSelect = document.getElementById('class-select');
-        const generateBtn = document.getElementById('generate-btn');
-        const outputWrapper = document.getElementById('output-wrapper');
-        const promptOutput = document.getElementById('prompt-output');
-        const syncStatus = document.getElementById('sync-status');
-        const actionLabel = document.getElementById('action-label');
+    const classSelect = document.getElementById('class-select');
+    const generateBtn = document.getElementById('generate-btn');
+    const outputWrapper = document.getElementById('output-wrapper');
+    const promptOutput = document.getElementById('prompt-output');
+    const syncStatus = document.getElementById('sync-status');
+    const actionLabel = document.getElementById('action-label');
 
-        // High-reliability live JSON data asset ingestion
-        async function loadManifestAsset() {
-            try {
-                const response = await fetch('dds_manifest.json');
-                if (!response.ok) throw new Error();
-                liveManifestData = await response.json();
-                
-                syncStatus.innerText = "Pipeline Synced: Successfully linked to dds_manifest.json asset layers.";
-                syncStatus.style.borderColor = "#10b981";
-                syncStatus.style.color = "#34d399";
-                syncStatus.style.backgroundColor = "rgba(16, 185, 129, 0.1)";
-            } catch (err) {
-                console.warn("Unable to fetch manifest. Operating in detached network sandbox state.");
-                syncStatus.innerText = "Sandbox State: Running isolated from dds_manifest.json asset.";
-                syncStatus.style.borderColor = "#f59e0b";
-                syncStatus.style.color = "#fbbf24";
-                syncStatus.style.backgroundColor = "rgba(245, 158, 11, 0.1)";
-            }
+    // Core Real-World Canonical Subject Registry Map
+    const canonicalSubjectMap = {
+        "004.1": "General Works on Computing & Manuals",
+        "004.2": "Systems Architecture & Hardware Micro-Design",
+        "004.35": "Parallel Processing & Neuromorphic Hardware Matrix Arrays",
+        "121": "Epistemology & Theories of Knowledge Verification",
+        "121.5": "Cognitive Sovereignty, Certainty, and Objective Logic",
+        "241": "Human Action, Christian Ethics & Moral Theology Values",
+        "242": "Devotional Literature, Direct Texts & Meditations",
+        "248": "Christian Experience, Daily Practices & Devotional Theology Discipline",
+        "330.1": "Systems of Political Economy & Capital Resource Allocation Models",
+        "332.4": "Money Standardizations, Commodity Value Systems & Economic Media",
+        "338.9": "Economic Development, Technological Infusion & Growth Factors",
+        "521": "Celestial Mechanics & Gravitational Trajectory Coordinates",
+        "531": "Classical Mechanics & Multi-Body Particle Kinematics",
+        "532": "Fluid Mechanics & Non-Linear Flow Dynamics",
+        "741.6": "Graphic Design, Visual Structural Layouts & Composition",
+        "741.62": "Vector Layouts, Coordinate Translations & Spatial UI Elements",
+        "744": "Technical Industrial Drawing & Precision Engineering Illustration"
+    };
+
+    // Strict Data Ingestion Loop
+    async function loadManifestAsset() {
+        try {
+            const response = await fetch('dds_manifest.json');
+            if (!response.ok) throw new Error();
+            liveManifestData = await response.json();
+            
+            // Connection Active State
+            syncStatus.innerText = "Pipeline Synced: Successfully linked to dds_manifest.json asset layers.";
+            syncStatus.style.borderColor = "#10b981";
+            syncStatus.style.color = "#34d399";
+            syncStatus.style.backgroundColor = "rgba(16, 185, 129, 0.1)";
+            generateBtn.disabled = false;
+            generateBtn.style.opacity = "1";
+            generateBtn.innerText = "Compile Bulk Ingestion Prompt";
+        } catch (err) {
+            // Connection Blocked/Offline State
+            syncStatus.innerText = "CRITICAL LIMITATION: This generator tool requires an active server connection to dds_manifest.json to evaluate unmapped rows.";
+            syncStatus.style.borderColor = "#ef4444";
+            syncStatus.style.color = "#fca5a5";
+            syncStatus.style.backgroundColor = "rgba(239, 68, 68, 0.15)";
+            
+            // Lock UI Controls
+            generateBtn.disabled = true;
+            generateBtn.style.opacity = "0.4";
+            generateBtn.style.cursor = "not-allowed";
+            generateBtn.innerText = "Execution Locked: dds_manifest.json Asset File Missing";
         }
+    }
+
+    generateBtn.addEventListener('click', () => {
+        if (!liveManifestData) return;
+
+        const selectedClassPrefix = classSelect.value;
+        const activeClassData = liveManifestData.classes[selectedClassPrefix];
+
+        if (!activeClassData || !activeClassData.divisions) {
+            alert(`The target cluster [${selectedClassPrefix}] is completely missing inside your current dds_manifest.json file.`);
+            return;
+        }
+
+        let sectionTargetsText = "";
+        let jsonStructureTemplate = "";
+        let missingCount = 0;
+
+        Object.keys(activeClassData.divisions).sort().forEach(divId => {
+            const division = activeClassData.divisions[divId];
+            if (division.sections) {
+                Object.keys(division.sections).sort().forEach(secId => {
+                    const section = division.sections[secId];
+                    
+                    if (!section.blind_spot || section.blind_spot.trim() === "") {
+                        missingCount++;
+                        const workingTrueTitle = canonicalSubjectMap[secId] || section.title || "Target Specific Subcategory Domain Cluster";
+                        
+                        sectionTargetsText += `- **Section ID:** ${secId} | **Section Title:** ${workingTrueTitle}\n`;
+                        jsonStructureTemplate += `  "${secId}": {\n    "id": "${secId}",\n    "title": "${workingTrueTitle}",\n    "confidence": [Insert Estimated Confidence Score 0-100% based on your primary source data density],\n    "blind_spot": "[Insert a hyper-specific, technical, or historical blind spot where your tracking accuracy wavers within this localized domain]"\n  },\n`;
+                    }
+                });
+            }
+        });
+
+        if (missingCount === 0) {
+            promptOutput.value = `Verification Complete: All structural section layers inside Class cluster ${selectedClassPrefix} are already 100% audited and populated!`;
+            actionLabel.innerText = "System Audit Complete";
+            actionLabel.style.color = "#10b981";
+            outputWrapper.classList.add('visible');
+            return;
+        }
+
+        jsonStructureTemplate = jsonStructureTemplate.trim().replace(/,$/, '');
+
+        const bulkMacroPrompt = `Act as a digital archivist conducting an on-demand granular audit of your data boundaries.
+
+I am expanding my Dewey Decimal System Self-Audit repository. Please evaluate your depth of knowledge simultaneously across all of the following un-populated structural nodes:
+${sectionTargetsText}
+Provide a syntactically pristine JSON block matching this exact structure (do not wrap it in conversational text, markdown introductory commentary, or explanations; just output the raw JSON code block data tree):
+
+{
+${jsonStructureTemplate}
+}`;
+
+        promptOutput.value = bulkMacroPrompt;
+        actionLabel.innerText = `Generated Bulk Macro-Prompt Payload (${missingCount} Nodes Targeted)`;
+        actionLabel.style.color = "var(--accent)";
+        outputWrapper.classList.add('visible');
+    });
+
+    promptOutput.addEventListener('click', () => {
+        promptOutput.select();
+        document.execCommand('copy');
+        const originalLabel = actionLabel.innerText;
+        actionLabel.innerText = "Payload copied to clipboard successfully!";
+        actionLabel.style.color = "#10b981";
+        setTimeout(() => { 
+            actionLabel.innerText = originalLabel; 
+            actionLabel.style.color = "var(--accent)";
+        }, 2500);
+    });
+
+    window.addEventListener('DOMContentLoaded', loadManifestAsset);
 
         generateBtn.addEventListener('click', () => {
             const selectedClassPrefix = classSelect.value;
             
             if (!liveManifestData || !liveManifestData.classes) {
-                alert("Cannot generate prompts: Live manifest asset array data has not been parsed or is unpopulated.");
+                alert("Cannot generate prompts: Live manifest asset data has not been parsed or is unpopulated.");
                 return;
             }
 
             const activeClassData = liveManifestData.classes[selectedClassPrefix];
 
             if (!activeClassData || !activeClassData.divisions) {
-                alert(`The target cluster [${selectedClassPrefix}] is completely missing or unpopulated inside your current dds_manifest.json file.`);
+                alert(`The target cluster [${selectedClassPrefix}] is completely missing inside your current dds_manifest.json file.`);
                 return;
             }
 
@@ -221,18 +324,21 @@
             let jsonStructureTemplate = "";
             let missingCount = 0;
 
-            // Deep-scan through the true active target division structure
             Object.keys(activeClassData.divisions).sort().forEach(divId => {
                 const division = activeClassData.divisions[divId];
                 if (division.sections) {
                     Object.keys(division.sections).sort().forEach(secId => {
                         const section = division.sections[secId];
                         
-                        // HARVEST CONDITION: Identify only cells with unpopulated/blank blind spots
+                        // HARVEST CONDITION: Catch empty blind spots
                         if (!section.blind_spot || section.blind_spot.trim() === "") {
                             missingCount++;
-                            sectionTargetsText += `- **Section ID:** ${secId} | **Section Title:** ${section.title}\n`;
-                            jsonStructureTemplate += `  "${secId}": {\n    "id": "${secId}",\n    "title": "${section.title}",\n    "confidence": [Estimated Depth Score 0-100%],\n    "blind_spot": "[Hyper-specific architectural limit or data tracking gap]"\n  },\n`;
+                            
+                            // DYNAMIC RESOLUTION: Pull canonical title if registered, else use default structural fallback
+                            const workingTrueTitle = canonicalSubjectMap[secId] || section.title || "Target Specific Subcategory Domain Cluster";
+                            
+                            sectionTargetsText += `- **Section ID:** ${secId} | **Section Title:** ${workingTrueTitle}\n`;
+                            jsonStructureTemplate += `  "${secId}": {\n    "id": "${secId}",\n    "title": "${workingTrueTitle}",\n    "confidence": [Insert Estimated Confidence Score 0-100% based on your primary source data density],\n    "blind_spot": "[Insert a hyper-specific, technical, or historical blind spot where your tracking accuracy wavers within this localized domain]"\n  },\n`;
                         }
                     });
                 }
@@ -246,28 +352,24 @@
                 return;
             }
 
-            // Trim trailing structural loop characters
             jsonStructureTemplate = jsonStructureTemplate.trim().replace(/,$/, '');
 
-            const bulkMacroPrompt = `Act as an elite digital archivist performing an on-demand, multi-node structural validation audit.
+            const bulkMacroPrompt = `Act as a digital archivist conducting an on-demand granular audit of your data boundaries.
 
-I am populating the baseline manifest layer of my Dewey Decimal System Explorer for the macro category cluster: **${selectedClassPrefix} - ${activeClassData.title}**.
-
-Please run an objective depth-of-knowledge assessment simultaneously across all of the following un-populated structural nodes:
+I am expanding my Dewey Decimal System Self-Audit repository. Please evaluate your depth of knowledge simultaneously across all of the following un-populated structural nodes:
 ${sectionTargetsText}
-Provide a syntactically pristine, single JSON object payload combining all responses. Your output must be strictly valid JSON text containing no conversational introductory prose, markdown commentary, or explanations. Return only the raw data tree block matching this exact structural interface definition:
+Provide a syntactically pristine JSON block matching this exact structure (do not wrap it in conversational text, markdown introductory commentary, or explanations; just output the raw JSON code block data tree):
 
 {
 ${jsonStructureTemplate}
 }`;
 
             promptOutput.value = bulkMacroPrompt;
-            actionLabel.innerText = `Generated Bulk Macro-Prompt Payload (${missingCount} Nodes Target)`;
+            actionLabel.innerText = `Generated Bulk Macro-Prompt Payload (${missingCount} Nodes Targeted)`;
             actionLabel.style.color = "var(--accent)";
             outputWrapper.classList.add('visible');
         });
 
-        // Click-to-copy handler convenience layer
         promptOutput.addEventListener('click', () => {
             promptOutput.select();
             document.execCommand('copy');
