@@ -166,7 +166,7 @@
             border-top: 0 solid var(--border-color);
         }
         .division-card.expanded .section-drawer {
-            max-height: 1200px; /* arbitrary high ceiling for smooth CSS transitions */
+            max-height: 1200px;
             border-top: 1px solid var(--border-color);
         }
 
@@ -223,16 +223,13 @@
     </nav>
 
     <main id="main-panel">
-        <div class="panel-header" id="panel-header-content">
-            </div>
-        <div class="division-grid" id="division-container">
-            </div>
+        <div class="panel-header" id="panel-header-content"></div>
+        <div class="division-grid" id="division-container"></div>
     </main>
 
     <script>
     let globalData = null;
 
-    // Core embedded fallback structure to run smoothly even during offline/local testing
     const fallbackManifest = {
         "system_meta": {
             "version": "1.0.0-embedded",
@@ -293,7 +290,6 @@
         return 'indicator-risk';
     }
 
-    // Dynamic Prompt Builder Engine
     function launchPromptModal(secId, secTitle) {
         const customPrompt = `Act as a digital archivist conducting an on-demand granular audit of your data boundaries.
 
@@ -343,7 +339,6 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
         });
     }
 
-    // Native Async Data Pipeline Ingestion with Fallback Trigger
     async function runAuditSystem() {
         try {
             const response = await fetch('dds_manifest.json');
@@ -379,134 +374,4 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                     <span class="class-id">${classId}</span>
                     <span class="class-title">${dataObj.title}</span>
                 </div>
-                <span class="badge ${getThresholdClass(dataObj.base_confidence)}">${dataObj.base_confidence}%</span>
-            `;
-            
-            li.addEventListener('click', () => switchMainClassContext(classId));
-            classList.appendChild(li);
-        });
-
-        if(structuralFirstKey) {
-            switchMainClassContext(structuralFirstKey);
-        }
-    }
-
-    function switchMainClassContext(classId) {
-        document.querySelectorAll('.class-item').forEach(el => el.classList.remove('active'));
-        const activeItem = document.querySelector(`.class-item[data-id="${classId}"]`);
-        if (activeItem) activeItem.classList.add('active');
-
-        const classData = globalData.classes[classId];
-        const headerContent = document.getElementById('panel-header-content');
-        
-        let spotsListItems = "";
-        if (classData.macro_blind_spots && classData.macro_blind_spots.length > 0) {
-            classData.macro_blind_spots.forEach(spot => {
-                spotsListItems += `<li class="macro-blind-item">${spot}</li>`;
-            });
-        } else {
-            spotsListItems = `<li class="sec-placeholder">No notable system tracking systemic discrepancies documented.</li>`;
-        }
-
-        headerContent.innerHTML = `
-            <h2>${classId} – ${classData.title} <span class="badge ${getThresholdClass(classData.base_confidence)}">${classData.base_confidence}% Layer Base</span></h2>
-            <p class="nature-text">${classData.data_nature}</p>
-            <div class="macro-blind-container">
-                <div class="macro-blind-title">Structural Domain Macro Blind Spots</div>
-                <ul class="macro-blind-list">${spotsListItems}</ul>
-            </div>
-        `;
-
-        const divisionContainer = document.getElementById('division-container');
-        divisionContainer.innerHTML = "";
-
-        if(!classData.divisions || Object.keys(classData.divisions).length === 0) {
-            divisionContainer.innerHTML = `<div class="sec-placeholder" style="padding:2rem;">Data records unpopulated for this category.</div>`;
-            return;
-        }
-
-        Object.keys(classData.divisions).sort().forEach(divId => {
-            const divData = classData.divisions[divId];
-            const card = document.createElement('div');
-            card.className = 'division-card';
-            
-            let sectionRows = "";
-            if(divData.sections && Object.keys(divData.sections).length > 0) {
-                Object.keys(divData.sections).sort().forEach(secId => {
-                    const secData = divData.sections[secId];
-                    
-                    let blindSpotCellContent = "";
-                    let scoreBadgeContent = "";
-                    
-                    if (secData.blind_spot && secData.blind_spot.trim() !== "") {
-                        blindSpotCellContent = `<span class="sec-blind">${secData.blind_spot}</span>`;
-                        scoreBadgeContent = `<span class="badge ${getThresholdClass(secData.confidence)}">${secData.confidence}%</span>`;
-                    } else {
-                        blindSpotCellContent = `<button class="generate-prompt-btn" data-id="${secId}" data-title="${secData.title}" style="background: rgba(245, 158, 11, 0.15); border: 1px solid #f59e0b; color: #f59e0b; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; font-weight: bold; line-height:1;">Generate Audit Prompt</button>`;
-                        scoreBadgeContent = `<span class="badge indicator-risk" style="opacity: 0.5;">0%</span>`;
-                    }
-                    
-                    sectionRows += `
-                        <tr>
-                            <td class="sec-id">${secId}</td>
-                            <td class="sec-title">${secData.title}</td>
-                            <td>${scoreBadgeContent}</td>
-                            <td>${blindSpotCellContent}</td>
-                        </tr>
-                    `;
-                });
-            } else {
-                sectionRows = `<tr><td colspan="4" class="sec-placeholder" style="text-align:center; padding:2rem;">No deep structural section data populated.</td></tr>`;
-            }
-
-            card.innerHTML = `
-                <div class="division-trigger">
-                    <div class="div-title-block">
-                        <span class="div-id">${divId}</span>
-                        <span class="div-name">${divData.title}</span>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:1.5rem;">
-                        <span class="badge ${getThresholdClass(divData.division_confidence)}">${divData.division_confidence}%</span>
-                        <svg class="chevron" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                    </div>
-                </div>
-                <div class="section-drawer">
-                    <table class="section-table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Section System Segment Name</th>
-                                <th>Confidence</th>
-                                <th>Micro-Scale Blind Spot Profile Target</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${sectionRows}
-                        </tbody>
-                    </table>
-                </div>
-            `;
-
-            card.querySelectorAll('.generate-prompt-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    launchPromptModal(btn.getAttribute('data-id'), btn.getAttribute('data-title'));
-                });
-            });
-
-            card.querySelector('.division-trigger').addEventListener('click', () => {
-                const isExpanded = card.classList.contains('expanded');
-                document.querySelectorAll('.division-card').forEach(c => c.classList.remove('expanded'));
-                if (!isExpanded) {
-                    card.classList.add('expanded');
-                }
-            });
-
-            divisionContainer.appendChild(card);
-        });
-    }
-
-    window.addEventListener('DOMContentLoaded', runAuditSystem);
-</script>
-</body>
-</html>
+                <span class="badge ${getThresholdClass(dataObj.base_
