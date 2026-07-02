@@ -115,7 +115,7 @@
 
         textarea {
             width: 100%;
-            height: 320px;
+            height: 340px;
             background-color: var(--bg-input);
             border: 1px solid var(--border);
             border-radius: 6px;
@@ -128,11 +128,15 @@
             margin-bottom: 1rem;
         }
 
-        .copy-status {
-            text-align: right;
+        .status-banner {
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
             font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            background-color: rgba(51, 65, 85, 0.5);
+            border: 1px solid var(--border);
             color: var(--text-muted);
-            font-style: italic;
         }
     </style>
 </head>
@@ -140,92 +144,114 @@
 
     <div class="container">
         <h1>DDS Bulk Prompt Matrix Generator</h1>
-        <p class="subtitle">Select a baseline Dewey Decimal System structural class to run an on-demand, non-linear validation audit. Copy the compiled prompt to pull raw target payloads into your static manifest.</p>
+        <p class="subtitle">Harvest empty structural cells directly from your live JSON manifest. Select a master category block below to build a unified data extraction prompt.</p>
+
+        <div id="sync-status" class="status-banner">Initializing pipeline connectivity...</div>
 
         <div class="control-group">
             <label for="class-select">Target Class Cluster</label>
             <select id="class-select">
                 <option value="000">000 - Computer Science, Information & General Works</option>
                 <option value="100">100 - Philosophy & Psychology</option>
+                <option value="200">200 - Religion</option>
+                <option value="300">300 - Social Sciences</option>
+                <option value="400">400 - Language</option>
                 <option value="500">500 - Pure Science</option>
+                <option value="600">600 - Technology / Applied Science</option>
                 <option value="700">700 - Arts & Recreation</option>
+                <option value="800">800 - Literature</option>
+                <option value="900">900 - History & Geography</option>
             </select>
         </div>
 
         <button id="generate-btn">Compile Bulk Ingestion Prompt</button>
 
         <div class="output-group" id="output-wrapper">
-            <label for="prompt-output">Generated Macro-Prompt Payload</label>
+            <label for="prompt-output" id="action-label">Generated Macro-Prompt Payload</label>
             <textarea id="prompt-output" readonly></textarea>
-            <div class="copy-status" id="status-text">Click inside the code block to copy instantly.</div>
         </div>
     </div>
 
     <script>
-        // Structural target definitions maps for missing/un-audited class rows
-        const targetClassStructures = {
-            "000": {
-                "className": "Computer Science, Information & General Works",
-                "targets": [
-                    { "id": "004.2", "title": "Systems Architecture & Hardware Design" },
-                    { "id": "004.35", "title": "Parallel & Neuromorphic Computing" },
-                    { "id": "004.5", "title": "Approximation Algorithms & Logic" }
-                ]
-            },
-            "100": {
-                "className": "Philosophy & Psychology",
-                "targets": [
-                    { "id": "121.5", "title": "Cognitive Sovereignty & Naive Mind Logic" }
-                ]
-            },
-            "500": {
-                "className": "Pure Science",
-                "targets": [
-                    { "id": "521", "title": "Celestial Mechanics / Interstellar Milestone Coordinates" },
-                    { "id": "531", "title": "Classical Mechanics / Solid Mechanics Dynamics" },
-                    { "id": "532", "title": "Fluid Mechanics" },
-                    { "id": "536", "title": "Thermodynamics" }
-                ]
-            },
-            "700": {
-                "className": "Arts & Recreation",
-                "targets": [
-                    { "id": "741.6", "title": "Graphic Design" },
-                    { "id": "741.62", "title": "Vector Layouts & Spatial UI Schematics" },
-                    { "id": "744", "title": "Technical Drawing & Engineering Illustrations" }
-                ]
-            }
-        };
+        let liveManifestData = null;
 
         const classSelect = document.getElementById('class-select');
         const generateBtn = document.getElementById('generate-btn');
         const outputWrapper = document.getElementById('output-wrapper');
         const promptOutput = document.getElementById('prompt-output');
-        const statusText = document.getElementById('status-text');
+        const syncStatus = document.getElementById('sync-status');
+        const actionLabel = document.getElementById('action-label');
+
+        // High-reliability live JSON data asset ingestion
+        async function loadManifestAsset() {
+            try {
+                const response = await fetch('dds_manifest.json');
+                if (!response.ok) throw new Error();
+                liveManifestData = await response.json();
+                
+                syncStatus.innerText = "Pipeline Synced: Successfully linked to dds_manifest.json asset layers.";
+                syncStatus.style.borderColor = "#10b981";
+                syncStatus.style.color = "#34d399";
+                syncStatus.style.backgroundColor = "rgba(16, 185, 129, 0.1)";
+            } catch (err) {
+                console.warn("Unable to fetch manifest. Operating in detached network sandbox state.");
+                syncStatus.innerText = "Sandbox State: Running isolated from dds_manifest.json asset.";
+                syncStatus.style.borderColor = "#f59e0b";
+                syncStatus.style.color = "#fbbf24";
+                syncStatus.style.backgroundColor = "rgba(245, 158, 11, 0.1)";
+            }
+        }
 
         generateBtn.addEventListener('click', () => {
-            const selectedClass = classSelect.value;
-            const classMetadata = targetClassStructures[selectedClass];
+            const selectedClassPrefix = classSelect.value;
             
-            if (!classMetadata) return;
+            if (!liveManifestData || !liveManifestData.classes) {
+                alert("Cannot generate prompts: Live manifest asset array data has not been parsed or is unpopulated.");
+                return;
+            }
+
+            const activeClassData = liveManifestData.classes[selectedClassPrefix];
+
+            if (!activeClassData || !activeClassData.divisions) {
+                alert(`The target cluster [${selectedClassPrefix}] is completely missing or unpopulated inside your current dds_manifest.json file.`);
+                return;
+            }
 
             let sectionTargetsText = "";
             let jsonStructureTemplate = "";
+            let missingCount = 0;
 
-            classMetadata.targets.forEach((target, index) => {
-                sectionTargetsText += `- **Section ID:** ${target.id} | **Section Title:** ${target.title}\n`;
-                
-                jsonStructureTemplate += `  "${target.id}": {
-    "id": "${target.id}",
-    "title": "${target.title}",
-    "confidence": [Estimated Depth Score 0-100%],
-    "blind_spot": "[Hyper-specific, deep, primary source engineering boundary limit or tracking gap]"
-  }${index < classMetadata.targets.length - 1 ? ',\n' : ''}`;
+            // Deep-scan through the true active target division structure
+            Object.keys(activeClassData.divisions).sort().forEach(divId => {
+                const division = activeClassData.divisions[divId];
+                if (division.sections) {
+                    Object.keys(division.sections).sort().forEach(secId => {
+                        const section = division.sections[secId];
+                        
+                        // HARVEST CONDITION: Identify only cells with unpopulated/blank blind spots
+                        if (!section.blind_spot || section.blind_spot.trim() === "") {
+                            missingCount++;
+                            sectionTargetsText += `- **Section ID:** ${secId} | **Section Title:** ${section.title}\n`;
+                            jsonStructureTemplate += `  "${secId}": {\n    "id": "${secId}",\n    "title": "${section.title}",\n    "confidence": [Estimated Depth Score 0-100%],\n    "blind_spot": "[Hyper-specific architectural limit or data tracking gap]"\n  },\n`;
+                        }
+                    });
+                }
             });
+
+            if (missingCount === 0) {
+                promptOutput.value = `Verification Complete: All structural section layers inside Class cluster ${selectedClassPrefix} are already 100% audited and populated!`;
+                actionLabel.innerText = "System Audit Complete";
+                actionLabel.style.color = "#10b981";
+                outputWrapper.classList.add('visible');
+                return;
+            }
+
+            // Trim trailing structural loop characters
+            jsonStructureTemplate = jsonStructureTemplate.trim().replace(/,$/, '');
 
             const bulkMacroPrompt = `Act as an elite digital archivist performing an on-demand, multi-node structural validation audit.
 
-I am populating the baseline manifest layer of my Dewey Decimal System Explorer for the macro category cluster: **${selectedClass} - ${classMetadata.className}**.
+I am populating the baseline manifest layer of my Dewey Decimal System Explorer for the macro category cluster: **${selectedClassPrefix} - ${activeClassData.title}**.
 
 Please run an objective depth-of-knowledge assessment simultaneously across all of the following un-populated structural nodes:
 ${sectionTargetsText}
@@ -236,17 +262,25 @@ ${jsonStructureTemplate}
 }`;
 
             promptOutput.value = bulkMacroPrompt;
+            actionLabel.innerText = `Generated Bulk Macro-Prompt Payload (${missingCount} Nodes Target)`;
+            actionLabel.style.color = "var(--accent)";
             outputWrapper.classList.add('visible');
-            statusText.innerText = "Click inside the code block to copy instantly.";
-            statusText.style.color = "var(--text-muted)";
         });
 
+        // Click-to-copy handler convenience layer
         promptOutput.addEventListener('click', () => {
             promptOutput.select();
             document.execCommand('copy');
-            statusText.innerText = "Copied to clipboard smoothly!";
-            statusText.style.color = "var(--accent)";
+            const originalLabel = actionLabel.innerText;
+            actionLabel.innerText = "Payload copied to clipboard successfully!";
+            actionLabel.style.color = "#10b981";
+            setTimeout(() => { 
+                actionLabel.innerText = originalLabel; 
+                actionLabel.style.color = "var(--accent)";
+            }, 2500);
         });
+
+        window.addEventListener('DOMContentLoaded', loadManifestAsset);
     </script>
 </body>
 </html>
