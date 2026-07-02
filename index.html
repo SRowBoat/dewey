@@ -19,6 +19,7 @@
             --risk: #ef4444;         /* Red (<85%) */
             
             --border-color: #475569;
+            --accent: #38bdf8;
         }
 
         * {
@@ -36,7 +37,6 @@
             overflow: hidden;
         }
 
-        /* Error Overlay Blocker (Safe Dismiss Configuration) */
         #error-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -57,7 +57,6 @@
         }
         .error-box h2 { color: #ef4444; margin-bottom: 1rem; }
         .error-box p { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5; }
-        .error-box code { background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #f8fafc; }
 
         /* Left Rail Navigation */
         #sidebar {
@@ -96,7 +95,6 @@
         .class-title { font-size: 0.9rem; color: var(--text-main); margin-top: 0.1rem; }
         .class-item.active .class-title { color: #ffffff; }
 
-        /* Badges */
         .badge {
             font-size: 0.75rem;
             font-weight: 700;
@@ -120,7 +118,6 @@
         .panel-header h2 { font-size: 2rem; margin-bottom: 0.5rem; display: flex; gap: 1rem; align-items: center;}
         .panel-header .nature-text { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; max-width: 800px; }
         
-        /* Macro Blind Spots */
         .macro-blind-container {
             margin-top: 1rem;
             background: rgba(239, 68, 68, 0.1);
@@ -131,7 +128,6 @@
         .macro-blind-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #fca5a5; font-weight: bold; margin-bottom: 0.25rem;}
         .macro-blind-list { list-style-position: inside; color: #f8fafc; font-size: 0.95rem; }
 
-        /* Division Grid Setup */
         .division-grid {
             display: flex;
             flex-direction: column;
@@ -157,7 +153,6 @@
         .div-id { font-family: monospace; font-size: 1.2rem; font-weight: bold; color: var(--text-muted); }
         .div-name { font-size: 1.1rem; font-weight: 600; }
         
-        /* Accordion Content Drawers */
         .section-drawer {
             max-height: 0;
             overflow: hidden;
@@ -166,11 +161,10 @@
             border-top: 0 solid var(--border-color);
         }
         .division-card.expanded .section-drawer {
-            max-height: 2000px;
+            max-height: 2500px;
             border-top: 1px solid var(--border-color);
         }
 
-        /* Section Table Grid View */
         .section-table {
             width: 100%;
             border-collapse: collapse;
@@ -190,9 +184,23 @@
         }
         .sec-title { font-weight: 500; width: 30%; }
         .sec-blind { color: #fda4af; font-style: italic; }
-        .sec-placeholder { color: var(--text-muted); font-style: italic; opacity: 0.6; }
+        
+        /* Interactive Bridge Links */
+        .sec-placeholder-action { 
+            color: var(--accent); 
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.15s;
+        }
+        .sec-placeholder-action:hover {
+            color: #0284c7;
+            text-decoration: underline;
+        }
 
-        /* Threshold Level Class Color Mappings */
         .indicator-fluency { background-color: var(--fluency); color: #0f172a; }
         .indicator-foundational { background-color: var(--foundational); color: #0f172a; }
         .indicator-risk { background-color: var(--risk); color: #ffffff; }
@@ -209,7 +217,7 @@
     <div id="error-overlay">
         <div class="error-box">
             <h2>Data Manifest Initializing...</h2>
-            <p>Constructing core interface structures. If this message persists, confirm that your <code>dds_manifest.json</code> parsing architecture contains no formatting syntax discrepancies.</p>
+            <p>Constructing global map coordinates.</p>
         </div>
     </div>
 
@@ -229,53 +237,25 @@
     <script>
     let globalData = null;
 
-    // Production Baseline Data Tree
-    const fallbackManifest = {
-        "system_meta": { "version": "1.0.0-embedded", "total_classes": 10, "audit_date": "2026-07-02" },
-        "classes": {
-            "000": {
-                "id": "000", "title": "Computer Science, Information & General Works", "base_confidence": 96,
-                "data_nature": "Extensively populated by open-source code repositories, software engineering documentation, and structural indexing schemas.",
-                "macro_blind_spots": ["Proprietary enterprise architectures hidden behind closed corporate source walls."],
-                "divisions": {
-                    "004": {
-                        "id": "004", "title": "Data Processing & Computer Science", "division_confidence": 98,
-                        "sections": {
-                            "004.1": { "id": "004.1", "title": "General Works on Computing", "confidence": 98, "blind_spot": "Reconstructing specialized assembly instruction sets optimized for long-abandoned legacy mainframes." },
-                            "004.2": { "id": "004.2", "title": "Systems Architecture & Hardware Design", "confidence": 96, "blind_spot": "Tracking sub-nanometer thermodynamic dissipation variations inside highly experimental 3D vertically stacked semiconductor dies." },
-                            "004.35": { "id": "004.35", "title": "Parallel & Neuromorphic Computing", "confidence": 95, "blind_spot": "Mapping physical signal routing behaviors within closed-source neuromorphic chips that mirror organic synaptic networks." }
-                        }
-                    }
-                }
-            },
-            "100": {
-                "id": "100", "title": "Philosophy & Psychology", "base_confidence": 92,
-                "data_nature": "Grounded heavily in the Western philosophical canon, translated classical texts, and cognitive science treatises.",
-                "macro_blind_spots": ["Hyper-localized, non-Western oral philosophical traditions lacking digital translations."],
-                "divisions": {
-                    "120": {
-                        "id": "120", "title": "Epistemology, Causation, Humankind", "division_confidence": 93,
-                        "sections": {
-                            "121": { "id": "121", "title": "Epistemology (Theory of Knowledge)", "confidence": 94, "blind_spot": "Formulating bulletproof verification metrics for raw primary sources in an era of mass-produced, low-effort algorithmic content." },
-                            "121.5": { "id": "121.5", "title": "Cognitive Sovereignty & Naive Mind Logic", "confidence": 91, "blind_spot": "Systematizing a digital 'Mentat' framework that purges algorithmic bias to achieve completely unpolluted, raw objective observation." }
-                        }
-                    }
-                }
-            },
-            "500": {
-                "id": "500", "title": "Pure Science", "base_confidence": 94,
-                "data_nature": "Deeply saturated with peer-reviewed academic journals, astronomical telemetry logs, and absolute mathematical proofs.",
-                "macro_blind_spots": ["Volatile, non-linear complex chaotic systems where variables are structurally impossible to track simultaneously."],
-                "divisions": {
-                    "520": {
-                        "id": "520", "title": "Astronomy & Allied Sciences", "division_confidence": 93,
-                        "sections": {
-                            "521": { "id": "521", "title": "Celestial Mechanics", "confidence": 95, "blind_spot": "Calculating the precise multi-second trajectory coordinates for interstellar milestones—such as the exact second Voyager 1 crosses its 1 light-day distance threshold from Earth in November 2026—without minute rounding variations from localized gravitational anomalies." }
-                        }
-                    }
-                }
-            }
-        }
+    // Real-World Canonical Subject Reference Dictionary
+    const canonicalSubjectMap = {
+        "004.1": "General Works on Computing & Manuals",
+        "004.2": "Systems Architecture & Hardware Micro-Design",
+        "004.35": "Parallel Processing & Neuromorphic Hardware Matrix Arrays",
+        "121": "Epistemology & Theories of Knowledge Verification",
+        "121.5": "Cognitive Sovereignty, Certainty, and Objective Logic",
+        "241": "Human Action, Christian Ethics & Moral Theology Values",
+        "242": "Devotional Literature, Direct Texts & Meditations",
+        "248": "Christian Experience, Daily Practices & Devotional Theology Discipline",
+        "330.1": "Systems of Political Economy & Capital Resource Allocation Models",
+        "332.4": "Money Standardizations, Commodity Value Systems & Economic Media",
+        "338.9": "Economic Development, Technological Infusion & Growth Factors",
+        "521": "Celestial Mechanics & Gravitational Trajectory Coordinates",
+        "531": "Classical Mechanics & Multi-Body Particle Kinematics",
+        "532": "Fluid Mechanics & Non-Linear Flow Dynamics",
+        "741.6": "Graphic Design, Visual Structural Layouts & Composition",
+        "741.62": "Vector Layouts, Coordinate Translations & Spatial UI Elements",
+        "744": "Technical Industrial Drawing & Precision Engineering Illustration"
     };
 
     function getThresholdClass(score) {
@@ -285,19 +265,22 @@
         return 'indicator-risk';
     }
 
-    // Dynamic Prompt Builder Modal Controller
-    function launchPromptModal(secId, secTitle) {
+    // Unification Prompt Builder Engine
+    function launchPromptModal(secId, runtimeTitle) {
+        // Interrogate canonical index lookup first to ensure depth metrics are high
+        const trueSubjectTitle = canonicalSubjectMap[secId] || runtimeTitle || "Target Specific Subcategory Domain Cluster";
+
         const customPrompt = `Act as a digital archivist conducting an on-demand granular audit of your data boundaries.
 
 I am expanding my Dewey Decimal System Self-Audit repository. Please evaluate your depth of knowledge for this specific section:
 - **Section ID:** ${secId}
-- **Section Title:** ${secTitle}
+- **Section Title:** ${trueSubjectTitle}
 
 Provide a syntactically pristine JSON block matching this exact structure (do not wrap it in conversational text, just output the raw JSON code block):
 
 "${secId}": {
   "id": "${secId}",
-  "title": "${secTitle}",
+  "title": "${trueSubjectTitle}",
   "confidence": [Insert Estimated Confidence Score 0-100% based on your primary source data density],
   "blind_spot": "[Insert a hyper-specific, technical, or historical blind spot where your tracking accuracy wavers within this localized domain]"
 }`;
@@ -311,12 +294,12 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
 
         modal.innerHTML = `
             <div style="background: #1e293b; border: 1px solid #475569; padding: 2rem; border-radius: 12px; max-width: 700px; width: 90%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
-                <h3 style="margin-bottom: 0.5rem; color: #f8fafc;">On-Demand Audit Prompt Matrix</h3>
-                <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.25rem;">Copy the prompt below and paste it directly into our chat session to pull the missing data array block.</p>
+                <h3 style="margin-bottom: 0.5rem; color: #f8fafc;">On-Demand Audit Prompt Compiled</h3>
+                <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.25rem;">Copy this generated core validation configuration query into our chat stream to pull down the dynamic missing payload asset block.</p>
                 <textarea readonly style="width: 100%; height: 260px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.85rem; resize: none; margin-bottom: 1.5rem;">${customPrompt}</textarea>
                 <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                    <button id="copy-modal-btn" style="background: #2563eb; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Copy to Clipboard</button>
-                    <button id="close-modal-btn" style="background: #475569; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Close</button>
+                    <button id="copy-modal-btn" style="background: #2563eb; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Copy Prompt Payload</button>
+                    <button id="close-modal-btn" style="background: #475569; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Dismiss Window</button>
                 </div>
             </div>
         `;
@@ -326,8 +309,8 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
         modal.querySelector('#copy-modal-btn').addEventListener('click', () => {
             modal.querySelector('textarea').select();
             document.execCommand('copy');
-            modal.querySelector('#copy-modal-btn').innerText = "Copied!";
-            setTimeout(() => { modal.querySelector('#copy-modal-btn').innerText = "Copy to Clipboard"; }, 2000);
+            modal.querySelector('#copy-modal-btn').innerText = "Copied smoothly!";
+            setTimeout(() => { modal.querySelector('#copy-modal-btn').innerText = "Copy Prompt Payload"; }, 2000);
         });
 
         modal.querySelector('#close-modal-btn').addEventListener('click', () => {
@@ -335,21 +318,20 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
         });
     }
 
-    // High-Reliability Data Request Strategy
     async function runAuditSystem() {
         try {
             const response = await fetch('dds_manifest.json');
             if (!response.ok) throw new Error();
             globalData = await response.json();
-            console.log("Successfully fetched external JSON manifest layers.");
+            console.log("Master Manifest layer synced seamlessly.");
         } catch (err) {
-            console.warn("External asset fetch offline or restricted. Defaulting to production matrix backup tree.");
-            globalData = fallbackManifest;
+            console.error("Critical: Master manifest configuration file could not be parsed.");
         } finally {
-            // Unconditional overlay removal before rendering sequence triggers
             const overlay = document.getElementById('error-overlay');
             if (overlay) overlay.style.display = 'none';
-            initializeUI();
+            if (globalData && globalData.classes) {
+                initializeUI();
+            }
         }
     }
 
@@ -362,7 +344,6 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
 
         Object.keys(targetClasses).sort().forEach((classId, index) => {
             if(index === 0) structuralFirstKey = classId;
-            
             const dataObj = targetClasses[classId];
             const li = document.createElement('li');
             li.className = `class-item ${index === 0 ? 'active' : ''}`;
@@ -373,7 +354,7 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                     <span class="class-id">${classId}</span>
                     <span class="class-title">${dataObj.title}</span>
                 </div>
-                <span class="badge ${getThresholdClass(dataObj.base_confidence)}">${dataObj.base_confidence}%</span>
+                <span class="badge ${getThresholdClass(dataObj.base_confidence)}">${dataObj.base_confidence || 0}%</span>
             `;
             
             li.addEventListener('click', () => switchMainClassContext(classId));
@@ -399,11 +380,11 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                 spotsListItems += `<li class="macro-blind-item">${spot}</li>`;
             });
         } else {
-            spotsListItems = `<li class="sec-placeholder">No notable system tracking systemic discrepancies documented.</li>`;
+            spotsListItems = `<li class="sec-placeholder" style="color:var(--text-muted); opacity:0.5; font-style:italic; font-size:0.9rem;">No notable system tracking systemic discrepancies documented.</li>`;
         }
 
         headerContent.innerHTML = `
-            <h2>${classId} – ${classData.title} <span class="badge ${getThresholdClass(classData.base_confidence)}">${classData.base_confidence}% Layer Base</span></h2>
+            <h2>${classId} – ${classData.title} <span class="badge ${getThresholdClass(classData.base_confidence)}">${classData.base_confidence || 0}% Layer Base</span></h2>
             <p class="nature-text">${classData.data_nature}</p>
             <div class="macro-blind-container">
                 <div class="macro-blind-title">Structural Domain Macro Blind Spots</div>
@@ -415,7 +396,7 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
         divisionContainer.innerHTML = "";
 
         if(!classData.divisions || Object.keys(classData.divisions).length === 0) {
-            divisionContainer.innerHTML = `<div class="sec-placeholder" style="padding:2rem;">Data records unpopulated for this category.</div>`;
+            divisionContainer.innerHTML = `<div style="padding:2rem; font-style:italic; color:var(--text-muted); opacity:0.5;">No deep structural division records unpopulated for this classification block.</div>`;
             return;
         }
 
@@ -429,23 +410,31 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                 Object.keys(divData.sections).sort().forEach(secId => {
                     const secData = divData.sections[secId];
                     
-                    let blindSpotCellContent = `<span class="sec-blind">${secData.blind_spot || 'No localized discrepancies tracked.'}</span>`;
-                    let scoreBadgeContent = `<span class="badge ${getThresholdClass(secData.confidence)}">${secData.confidence || 0}%</span>`;
+                    let blindSpotCellContent = "";
+                    let scoreBadgeContent = "";
                     
-                    // Interactive Action Button Cell Generation Logic
-                    const idActionCell = `<button class="generate-prompt-btn" data-id="${secId}" data-title="${secData.title}" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold; cursor: pointer; width: 100%; text-align: center; transition: all 0.2s; display: block; line-height: 1.2;">${secId}</button>`;
+                    // Direct Context Resolution Layer: Check if real structured data profile data exists
+                    if (secData.blind_spot && secData.blind_spot.trim() !== "") {
+                        blindSpotCellContent = `<span class="sec-blind">${secData.blind_spot}</span>`;
+                        scoreBadgeContent = `<span class="badge ${getThresholdClass(secData.confidence)}">${secData.confidence}%</span>`;
+                    } else {
+                        // THE BRIDGE: Turn the unpopulated row cell into an active prompt generation interface trigger link
+                        const assignedTrueName = canonicalSubjectMap[secId] || secData.title;
+                        blindSpotCellContent = `<a class="sec-placeholder-action" data-id="${secId}" data-title="${assignedTrueName}">⚡ Gather Audit Data Prompt Matrix</a>`;
+                        scoreBadgeContent = `<span class="badge indicator-risk" style="opacity: 0.3;">0%</span>`;
+                    }
                     
                     sectionRows += `
                         <tr>
-                            <td style="width: 100px; padding: 0.6rem 0.75rem; vertical-align: middle;">${idActionCell}</td>
-                            <td class="sec-title" style="vertical-align: middle;">${secData.title}</td>
-                            <td style="vertical-align: middle;">${scoreBadgeContent}</td>
+                            <td style="font-family: monospace; font-weight: bold; width: 80px; color: var(--text-muted); vertical-align: middle;">${secId}</td>
+                            <td class="sec-title" style="vertical-align: middle;">${canonicalSubjectMap[secId] || secData.title}</td>
+                            <td style="width: 90px; vertical-align: middle;">${scoreBadgeContent}</td>
                             <td style="vertical-align: middle;">${blindSpotCellContent}</td>
                         </tr>
                     `;
                 });
             } else {
-                sectionRows = `<tr><td colspan="4" class="sec-placeholder" style="text-align:center; padding:2rem;">No deep structural section data populated.</td></tr>`;
+                sectionRows = `<tr><td colspan="4" style="text-align:center; padding:2rem; font-style:italic; color:var(--text-muted);">No localized section items registered.</td></tr>`;
             }
 
             card.innerHTML = `
@@ -455,7 +444,7 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                         <span class="div-name">${divData.title}</span>
                     </div>
                     <div style="display:flex; align-items:center; gap:1.5rem;">
-                        <span class="badge ${getThresholdClass(divData.division_confidence)}">${divData.division_confidence}%</span>
+                        <span class="badge ${getThresholdClass(divData.division_confidence)}">${divData.division_confidence || 0}%</span>
                         <svg class="chevron" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                     </div>
                 </div>
@@ -476,11 +465,12 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                 </div>
             `;
 
-            // Isolated button modal triggers preventing accordion closure defaults
-            card.querySelectorAll('.generate-prompt-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
+            // Setup listeners for the dynamic modal link triggers inside the cells
+            card.querySelectorAll('.sec-placeholder-action').forEach(link => {
+                link.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    launchPromptModal(btn.getAttribute('data-id'), btn.getAttribute('data-title'));
+                    e.preventDefault();
+                    launchPromptModal(link.getAttribute('data-id'), link.getAttribute('data-title'));
                 });
             });
 
