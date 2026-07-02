@@ -265,9 +265,9 @@
         return 'indicator-risk';
     }
 
-    // Unification Prompt Builder Engine
+    // Enhanced Dynamic Capability Prompt Builder Engine
     function launchPromptModal(secId, runtimeTitle) {
-        // Interrogate canonical index lookup first to ensure depth metrics are high
+        // Look inside your canonical dictionary to ensure the true real-world topic is passed to the LLM
         const trueSubjectTitle = canonicalSubjectMap[secId] || runtimeTitle || "Target Specific Subcategory Domain Cluster";
 
         const customPrompt = `Act as a digital archivist conducting an on-demand granular audit of your data boundaries.
@@ -276,13 +276,23 @@ I am expanding my Dewey Decimal System Self-Audit repository. Please evaluate yo
 - **Section ID:** ${secId}
 - **Section Title:** ${trueSubjectTitle}
 
-Provide a syntactically pristine JSON block matching this exact structure (do not wrap it in conversational text, just output the raw JSON code block):
+Provide a syntactically pristine JSON block matching this exact structure (do not wrap it in conversational text, markdown commentary, or explanations; just output the raw JSON code block data tree):
 
 "${secId}": {
   "id": "${secId}",
   "title": "${trueSubjectTitle}",
   "confidence": [Insert Estimated Confidence Score 0-100% based on your primary source data density],
-  "blind_spot": "[Insert a hyper-specific, technical, or historical blind spot where your tracking accuracy wavers within this localized domain]"
+  "blind_spot": "[Insert a hyper-specific, technical, or historical blind spot where your tracking accuracy wavers within this localized domain]",
+  "capability_profile": {
+    "known_proficiencies": [
+      "[Insert a highly technical example of a core concept, workflow, or architectural rule you thoroughly master within this specific section definition]",
+      "[Insert a second distinct example of primary source data density you confidently track here]"
+    ],
+    "suspected_weaknesses": [
+      "[Insert a specific technical area, edge-case limitation, or tracking gap where your internal confidence begins to waver within this domain]",
+      "[Insert a second distinct example of structural weakness or tracking regression within this subject cell]"
+    ]
+  }
 }`;
 
         const modal = document.createElement('div');
@@ -293,12 +303,12 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
         modal.style.zIndex = '2000'; modal.style.backdropFilter = 'blur(4px)';
 
         modal.innerHTML = `
-            <div style="background: #1e293b; border: 1px solid #475569; padding: 2rem; border-radius: 12px; max-width: 700px; width: 90%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
-                <h3 style="margin-bottom: 0.5rem; color: #f8fafc;">On-Demand Audit Prompt Compiled</h3>
-                <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.25rem;">Copy this generated core validation configuration query into our chat stream to pull down the dynamic missing payload asset block.</p>
-                <textarea readonly style="width: 100%; height: 260px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.85rem; resize: none; margin-bottom: 1.5rem;">${customPrompt}</textarea>
+            <div style="background: #1e293b; border: 1px solid #475569; padding: 2rem; border-radius: 12px; max-width: 750px; width: 90%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+                <h3 style="margin-bottom: 0.5rem; color: #f8fafc;">On-Demand Capability Prompt Compiled</h3>
+                <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.25rem;">Copy this updated query payload into our chat stream. It will force a rich competency profile return matching your new UI capabilities.</p>
+                <textarea readonly style="width: 100%; height: 280px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.85rem; resize: none; margin-bottom: 1.5rem;">${customPrompt}</textarea>
                 <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                    <button id="copy-modal-btn" style="background: #2563eb; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Copy Prompt Payload</button>
+                    <button id="copy-modal-btn" style="background: #2563eb; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Copy New Prompt</button>
                     <button id="close-modal-btn" style="background: #475569; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Dismiss Window</button>
                 </div>
             </div>
@@ -310,7 +320,7 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
             modal.querySelector('textarea').select();
             document.execCommand('copy');
             modal.querySelector('#copy-modal-btn').innerText = "Copied smoothly!";
-            setTimeout(() => { modal.querySelector('#copy-modal-btn').innerText = "Copy Prompt Payload"; }, 2000);
+            setTimeout(() => { modal.querySelector('#copy-modal-btn').innerText = "Copy New Prompt"; }, 2000);
         });
 
         modal.querySelector('#close-modal-btn').addEventListener('click', () => {
