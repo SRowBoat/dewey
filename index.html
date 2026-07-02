@@ -411,31 +411,39 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                     const secData = divData.sections[secId];
                     
                     let blindSpotCellContent = "";
-                    let scoreBadgeContent = "";
-                    
-                    // Direct Context Resolution Layer: Check if real structured data profile data exists
-                    if (secData.blind_spot && secData.blind_spot.trim() !== "") {
-                        blindSpotCellContent = `<span class="sec-blind">${secData.blind_spot}</span>`;
-                        scoreBadgeContent = `<span class="badge ${getThresholdClass(secData.confidence)}">${secData.confidence}%</span>`;
-                    } else {
-                        // THE BRIDGE: Turn the unpopulated row cell into an active prompt generation interface trigger link
-                        const assignedTrueName = canonicalSubjectMap[secId] || secData.title;
-                        blindSpotCellContent = `<a class="sec-placeholder-action" data-id="${secId}" data-title="${assignedTrueName}">⚡ Gather Audit Data Prompt Matrix</a>`;
-                        scoreBadgeContent = `<span class="badge indicator-risk" style="opacity: 0.3;">0%</span>`;
-                    }
-                    
-                    sectionRows += `
-                        <tr>
-                            <td style="font-family: monospace; font-weight: bold; width: 80px; color: var(--text-muted); vertical-align: middle;">${secId}</td>
-                            <td class="sec-title" style="vertical-align: middle;">${canonicalSubjectMap[secId] || secData.title}</td>
-                            <td style="width: 90px; vertical-align: middle;">${scoreBadgeContent}</td>
-                            <td style="vertical-align: middle;">${blindSpotCellContent}</td>
-                        </tr>
-                    `;
-                });
-            } else {
-                sectionRows = `<tr><td colspan="4" style="text-align:center; padding:2rem; font-style:italic; color:var(--text-muted);">No localized section items registered.</td></tr>`;
-            }
+let scoreBadgeContent = "";
+
+// 1. THE IF BLOCK: Handles completed, audited entries
+if (secData.blind_spot && secData.blind_spot.trim() !== "") {
+    let profileHtml = `<div class="sec-blind"><strong>System Boundary Limit:</strong> ${secData.blind_spot}</div>`;
+    
+    // Check if the newly expanded capability profile lists exist in your JSON
+    if (secData.capability_profile) {
+        const prof = secData.capability_profile.known_proficiencies || [];
+        const weak = secData.capability_profile.suspected_weaknesses || [];
+        
+        profileHtml += `
+            <div class="capability-matrix" style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.1); font-size: 0.85rem;">
+                <div style="color: #4ade80; margin-bottom: 0.25rem;"><strong>✓ Known Proficiencies:</strong></div>
+                <ul style="list-style-type: square; margin-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-main);">
+                    ${prof.map(p => `<li>${p}</li>`).join('')}
+                </ul>
+                <div style="color: #fca5a5; margin-bottom: 0.25rem;"><strong>⚠ Suspected Weaknesses:</strong></div>
+                <ul style="list-style-type: square; margin-left: 1.25rem; color: var(--text-muted);">
+                    ${weak.map(w => `<li>${w}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+    }
+    blindSpotCellContent = profileHtml;
+    scoreBadgeContent = `<span class="badge ${getThresholdClass(secData.confidence)}">${secData.confidence}%</span>`;
+
+// 2. THE ELSE BLOCK: Keep this completely safe to preserve your interactive prompt links!
+} else {
+    const assignedTrueName = canonicalSubjectMap[secId] || secData.title;
+    blindSpotCellContent = `<a class="sec-placeholder-action" data-id="${secId}" data-title="${assignedTrueName}">⚡ Gather Audit Data Prompt Matrix</a>`;
+    scoreBadgeContent = `<span class="badge indicator-risk" style="opacity: 0.3;">0%</span>`;
+}
 
             card.innerHTML = `
                 <div class="division-trigger">
