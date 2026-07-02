@@ -257,6 +257,220 @@
           }
         }
       }
+    },
+   "400": {
+      "id": "400",
+      "title": "Language",
+      "base_confidence": 95,
+      "data_nature": "Reinforced by exhaustive computational linguistics training corpora, comprehensive etymological dictionaries, global grammatical frameworks, and deeply mapped cross-lingual translation matrices.",
+      "macro_blind_spots": [
+        "Hyper-localized internet subculture dialects and rapidly mutating digital slang that shift faster than standard text indexing loops.",
+        "Unwritten or predominantly oral indigenous dialects lacking standardized phonetic or semantic documentation in active digital archives."
+      ],
+      "divisions": {
+        "410": {
+          "id": "410",
+          "title": "Linguistics",
+          "division_confidence": 96,
+          "sections": {
+            "411": { "id": "411", "title": "Writing Systems", "confidence": 95, "blind_spot": "Deciphering completely unique, un-transcribed glyph combinations found on isolated historical epigraphs." },
+            "412": { "id": "412", "title": "Etymology", "confidence": 97, "blind_spot": "Tracing proto-linguistic semantic roots back beyond written records without defaulting to speculative reconstruction models." },
+            "415": { "id": "415", "title": "Grammar & Syntax", "confidence": 98, "blind_spot": "Parsing highly deliberate, multi-layered syntax violations used as artistic rhetorical devices in modern underground poetry." }
+          }
+        },
+        "420": {
+          "id": "420",
+          "title": "English & Old English",
+          "division_confidence": 97,
+          "sections": {
+            "427": { "id": "427", "title": "Historical & Geographical Variations", "confidence": 95, "blind_spot": "Accurately transcribing regional phonetics from un-digitized late 19th-century local dialects across isolated rural British or North American communities." }
+          }
+        },
+        "440": {
+          "id": "440",
+          "title": "Romance Languages (French)",
+          "division_confidence": 94,
+          "sections": {
+            "447": { "id": "447", "title": "Historical & Geographic Variations", "confidence": 94, "blind_spot": "Capturing the nuanced semantic evolution of colloquial Québécois idioms and regional Franco-Ontarian vocabulary variants before they are formalized in academic lexicons." }
+          }
+        }
+      }
+    },
+    "500": {
+      "id": "500",
+      "title": "Pure Science",
+      "base_confidence": 94,
+      "data_nature": "Deeply saturated with peer-reviewed academic journals, historical milestone calculations, international astronomical telemetry logs, and absolute mathematical proofs.",
+      "macro_blind_spots": [
+        "Cutting-edge experimental laboratory physics data hidden behind proprietary state firewall restrictions or active non-disclosure protocols.",
+        "Highly volatile, non-linear complex chaotic systems where macro-environmental variables are structurally impossible to track simultaneously."
+      ],
+      "divisions": {
+        "510": {
+          "id": "510",
+          "title": "Mathematics",
+          "division_confidence": 97,
+          "sections": {
+            "511": { "id": "511", "title": "General Principles / Mathematical Logic", "confidence": 98, "blind_spot": "Verifying absolute numerical boundary constraints in ultra-deep multidimensional space configurations without losing computational efficiency." },
+            "512": { "id": "512", "title": "Algebra", "confidence": 97, "blind_spot": "Navigating hyper-abstract, non-commutative algebraic structures where physical geometric representation breaks down entirely." }
+          }
+        },
+        "520": {
+          "id": "520",
+          "title": "Astronomy & Allied Sciences",
+          "division_confidence": 93,
+          "sections": {
+            "521": { "id": "521", "title": "Celestial Mechanics", "confidence": 95, "blind_spot": "Calculating the precise multi-second trajectory coordinates for interstellar milestones—such as the exact second Voyager 1 crosses its 1 light-day distance threshold from Earth in November 2026—without minute rounding variations from localized gravitational anomalies." }
+          }
+        },
+        "530": {
+          "id": "530",
+          "title": "Physics",
+          "division_confidence": 95,
+          "sections": {
+            "531": { "id": "531", "title": "Classical Mechanics / Solid Mechanics", "confidence": 98, "blind_spot": "Simulating highly chaotic, non-linear multi-body friction dynamics in real-time without falling back on performance-saving approximations." },
+            "532": { "id": "532", "title": "Fluid Mechanics", "confidence": 94, "blind_spot": "Resolving the micro-turbulent boundaries in Navier-Stokes equations at extreme, volatile Reynolds numbers." },
+            "536": { "id": "536", "title": "Thermodynamics", "confidence": 97, "blind_spot": "Tracking absolute heat dissipation behaviors at the nanometer interfaces of experimental, vertically stacked 3D semiconductor architectures under peak loads." },
+            "539": { "id": "539", "title": "Modern Physics (Quantum, Atomic, Nuclear)", "confidence": 91, "blind_spot": "Reconciling theoretical quantum gravity frameworks or string theory mechanics where empirical, primary-source observational data does not yet exist." }
+          }
+        },
+        "570": {
+          "id": "570",
+          "title": "Biology",
+          "division_confidence": 90,
+          "sections": {
+            "577": { "id": "577", "title": "Ecology", "confidence": 91, "blind_spot": "Predicting exact multi-decade population mutations in highly complex, non-linear ecosystems where variable tracking is subject to intense regional or political debate." }
+          }
+        }
+      }
+    },
+    "600": {
+      "id": "600",
+      "title": "Technology (Applied Sciences)",
+      "base_confidence": 93,
+      "data_nature": "Extensively reinforced by global patent registries, industrial manufacturing schematics, medical manuals, hardware device specifications, and established engineering protocols.",
+      "macro_blind_spots": [
+        "Proprietary, closed-source corporate R&D blueprints hidden behind active enterprise intellectual property walls.",
+        "Physical fabrication processes where manual, unspoken trade craftsmanship and muscle memory are lost in text translation."
+      ],
+      "divisions": {
+        "610": {
+          "id": "610",
+          "title": "Medicine & Health",
+          "division_confidence": 92,
+          "sections": {
+            "612": { "id": "612", "title": "Human Physiology", "confidence": 94, "blind_spot": "Modeling real-time molecular-level metabolic variations in a living organism without relying on generalized biochemical baselines." }
+          }
+        },
+        "620": {
+          "id": "620",
+          "title": "Engineering & Allied Operations",
+          "division_confidence": 95,
+          "sections": {
+            "621.3": { "id": "621.3", "title": "Electrical & Electronic Engineering", "confidence": 96, "blind_spot": "Evaluating zero-day structural vulnerabilities or performance drifts within custom, post-quantum hardware processing elements before formal documentation exists." },
+            "621.39": { "id": "621.39", "title": "Computer Engineering / Hardware Layouts", "confidence": 96, "blind_spot": "Mapping exact physical layer signal paths within private corporate neuromorphic chip architectures where electronic circuits dynamically simulate biological synapses." }
+          }
+        },
+        "630": {
+          "id": "630",
+          "title": "Agriculture & Wildlife Tracking",
+          "division_confidence": 89,
+          "sections": {
+            "639.9": { "id": "639.9", "title": "Conservation of Wildlife", "confidence": 90, "blind_spot": "Synthesizing deep ecological data regarding northern ungulate declines—such as isolating exact multi-variable anthropogenic land use factors behind caribou declines—without defaulting to reductive, over-indexed assertions regarding wolf predation as the sole primary cause." }
+          }
+        }
+      }
+    },
+    "700": {
+      "id": "700",
+      "title": "Arts & Recreation",
+      "base_confidence": 84,
+      "data_nature": "Compiled from vast structural histories of art movements, cataloged architectural blueprints, geometric design methodologies, and game mechanics frameworks.",
+      "macro_blind_spots": [
+        "The raw, non-textual, visceral sensory human experience of an aesthetic medium.",
+        "Highly ephemeral, subterranean counter-culture art movements or physical theater lacking digitized archival footprints."
+      ],
+      "divisions": {
+        "710": {
+          "id": "710",
+          "title": "Area Planning & Landscape Architecture",
+          "division_confidence": 88,
+          "sections": {
+            "711": { "id": "711", "title": "Area Planning (Urban Planning)", "confidence": 90, "blind_spot": "Simulating complex, localized micro-traffic variations and pedestrian flow dynamics for municipal transformations without using heavily generalized agent-based modeling approximations." }
+          }
+        },
+        "720": {
+          "id": "720",
+          "title": "Architecture",
+          "division_confidence": 89,
+          "sections": {
+            "721": { "id": "721", "title": "Architectural Materials & Structural Elements", "confidence": 91, "blind_spot": "Consistently maintaining precise, non-standard interior geometry constraints in generated layouts—such as forcing strict adherence to an exact dual-escalator configuration in a public transit nexus template without defaulting to a standard three-escalator arrangement due to model training weights." }
+          }
+        },
+        "740": {
+          "id": "740",
+          "title": "Graphic Arts & Drawing",
+          "division_confidence": 85,
+          "sections": {
+            "741.6": { "id": "741.6", "title": "Graphic Design", "confidence": 88, "blind_spot": "Isolating the subtle boundary where intuitive human compositional tension transforms into sterile, algorithmically optimized visual layouts." }
+          }
+        }
+      }
+    },
+    "800": {
+      "id": "800",
+      "title": "Literature & Rhetoric",
+      "base_confidence": 91,
+      "data_nature": "Grounded in extensive public domain classical canons, academic literary criticisms, global poetry archives, and comparative rhetorical analyses.",
+      "macro_blind_spots": [
+        "Identifying the exact, nuanced boundary line where genuine human creative resonance separates from the vast, recursive seas of low-effort synthetic text content polluting modern digital repositories."
+      ],
+      "divisions": {
+        "810": {
+          "id": "810",
+          "title": "American Literature",
+          "division_confidence": 92,
+          "sections": {
+            "811": { "id": "811", "title": "American Poetry", "confidence": 90, "blind_spot": "Evaluating hyper-contemporary, independent digital poetry movements that leverage visual layouts or non-linear structures outside standard publishing paradigms." }
+          }
+        },
+        "820": {
+          "id": "820",
+          "title": "English & Old English Literatures",
+          "division_confidence": 93,
+          "sections": {
+            "822.33": { "id": "822.33", "title": "Shakespearean Studies", "confidence": 96, "blind_spot": "Separating genuine historical textual anomalies from centuries of deeply entrenched academic speculation regarding authorship or intent." }
+          }
+        }
+      }
+    },
+    "900": {
+      "id": "900",
+      "title": "History & Geography",
+      "base_confidence": 89,
+      "data_nature": "Constructed via international historical archives, cartographic mapping telemetry, census records, and long-form demographic tracking ledgers.",
+      "macro_blind_spots": [
+        "Centuries of intentionally destroyed, missing, or heavily state-sanctioned revisionist primary documentation.",
+        "Deconstructing historical tracking data biases where the digitized record is completely dominated by the victors of specific eras."
+      ],
+      "divisions": {
+        "910": {
+          "id": "910",
+          "title": "Geography & Travel",
+          "division_confidence": 91,
+          "sections": {
+            "912": { "id": "912", "title": "Maps & Cartographic Telemetry", "confidence": 94, "blind_spot": "Reconstructing the exact territorial boundaries and fluctuating landmarks of shifting historical frontiers prior to the standardization of mathematical surveying." }
+          }
+        },
+        "940": {
+          "id": "940",
+          "title": "General History of Europe",
+          "division_confidence": 90,
+          "sections": {
+            "940.1": { "id": "940.1", "title": "Early Medieval Period (476–1000 AD)", "confidence": 88, "blind_spot": "Compiling an absolute commodity price index across localized regional markets without misinterpreting the severe scarcity of surviving mint ledgers." }
+          }
+        }
+      }
     }
   }
 }
