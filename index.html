@@ -328,20 +328,24 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
         });
     }
 
+    // High-Reliability Data Ingestion Loop
     async function runAuditSystem() {
         try {
             const response = await fetch('dds_manifest.json');
-            if (!response.ok) throw new Error();
+            if (!response.ok) throw new Error("Network response asset was not ok");
             globalData = await response.json();
             console.log("Master Manifest layer synced seamlessly.");
         } catch (err) {
-            console.error("Critical: Master manifest configuration file could not be parsed.");
+            console.error("Critical: Master manifest configuration file could not be parsed.", err);
+            
+            // EMERGENCY SAFETY FALLBACK: Create an empty container so the page still loads cleanly
+            globalData = { classes: {} };
         } finally {
+            // Drop the curtain no matter what happens to keep the UI interactive
             const overlay = document.getElementById('error-overlay');
             if (overlay) overlay.style.display = 'none';
-            if (globalData && globalData.classes) {
-                initializeUI();
-            }
+            
+            initializeUI();
         }
     }
 
