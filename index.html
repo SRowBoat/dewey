@@ -36,7 +36,7 @@
             overflow: hidden;
         }
 
-        /* Error Overlay */
+        /* Error Overlay Blocker (Safe Dismiss Configuration) */
         #error-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -131,7 +131,7 @@
         .macro-blind-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #fca5a5; font-weight: bold; margin-bottom: 0.25rem;}
         .macro-blind-list { list-style-position: inside; color: #f8fafc; font-size: 0.95rem; }
 
-        /* Division Grid */
+        /* Division Grid Setup */
         .division-grid {
             display: flex;
             flex-direction: column;
@@ -157,7 +157,7 @@
         .div-id { font-family: monospace; font-size: 1.2rem; font-weight: bold; color: var(--text-muted); }
         .div-name { font-size: 1.1rem; font-weight: 600; }
         
-        /* Accordion Content */
+        /* Accordion Content Drawers */
         .section-drawer {
             max-height: 0;
             overflow: hidden;
@@ -170,7 +170,7 @@
             border-top: 1px solid var(--border-color);
         }
 
-        /* Section Table View */
+        /* Section Table Grid View */
         .section-table {
             width: 100%;
             border-collapse: collapse;
@@ -188,12 +188,11 @@
             letter-spacing: 0.05em;
             background: rgba(0,0,0,0.1);
         }
-        .sec-id { font-family: monospace; font-weight: bold; width: 80px; }
         .sec-title { font-weight: 500; width: 30%; }
         .sec-blind { color: #fda4af; font-style: italic; }
         .sec-placeholder { color: var(--text-muted); font-style: italic; opacity: 0.6; }
 
-        /* Utility Indicator Styles */
+        /* Threshold Level Class Color Mappings */
         .indicator-fluency { background-color: var(--fluency); color: #0f172a; }
         .indicator-foundational { background-color: var(--foundational); color: #0f172a; }
         .indicator-risk { background-color: var(--risk); color: #ffffff; }
@@ -209,8 +208,8 @@
 
     <div id="error-overlay">
         <div class="error-box">
-            <h2>Data Manifest Missing</h2>
-            <p>To run this self-audit engine, create a file named <code>dds_manifest.json</code> in the exact same local folder/directory as this HTML file and structure your payloads within it.</p>
+            <h2>Data Manifest Initializing...</h2>
+            <p>Constructing core interface structures. If this message persists, confirm that your <code>dds_manifest.json</code> parsing architecture contains no formatting syntax discrepancies.</p>
         </div>
     </div>
 
@@ -230,31 +229,48 @@
     <script>
     let globalData = null;
 
+    // Production Baseline Data Tree
     const fallbackManifest = {
-        "system_meta": {
-            "version": "1.0.0-embedded",
-            "total_classes": 10,
-            "audit_date": "2026-07-02"
-        },
+        "system_meta": { "version": "1.0.0-embedded", "total_classes": 10, "audit_date": "2026-07-02" },
         "classes": {
             "000": {
-                "id": "000",
-                "title": "Computer Science, Information & General Works",
-                "base_confidence": 96,
-                "data_nature": "Saturated with open-source repositories, technical documentation, structural system designs, and academic computer science literature.",
-                "macro_blind_spots": [
-                    "Highly proprietary enterprise software architectures with closed source code.",
-                    "Intentional friction points where data-scraping blocks hide institutional indexing systems."
-                ],
+                "id": "000", "title": "Computer Science, Information & General Works", "base_confidence": 96,
+                "data_nature": "Extensively populated by open-source code repositories, software engineering documentation, and structural indexing schemas.",
+                "macro_blind_spots": ["Proprietary enterprise architectures hidden behind closed corporate source walls."],
                 "divisions": {
                     "004": {
-                        "id": "004",
-                        "title": "Data Processing & Computer Science",
-                        "division_confidence": 97,
+                        "id": "004", "title": "Data Processing & Computer Science", "division_confidence": 98,
                         "sections": {
-                            "004.1": { "id": "004.1", "title": "General Works on Computing", "confidence": 98, "blind_spot": "Reconstructing specialized assembly instruction sets optimized for long-abandoned legacy mainframe arrays." },
-                            "004.2": { "id": "004.2", "title": "Systems Architecture & Hardware Design", "confidence": 96, "blind_spot": "" },
-                            "004.3": { "id": "004.3", "title": "Parallel Processing Networks", "confidence": 95, "blind_spot": "" }
+                            "004.1": { "id": "004.1", "title": "General Works on Computing", "confidence": 98, "blind_spot": "Reconstructing specialized assembly instruction sets optimized for long-abandoned legacy mainframes." },
+                            "004.2": { "id": "004.2", "title": "Systems Architecture & Hardware Design", "confidence": 96, "blind_spot": "Tracking sub-nanometer thermodynamic dissipation variations inside highly experimental 3D vertically stacked semiconductor dies." },
+                            "004.35": { "id": "004.35", "title": "Parallel & Neuromorphic Computing", "confidence": 95, "blind_spot": "Mapping physical signal routing behaviors within closed-source neuromorphic chips that mirror organic synaptic networks." }
+                        }
+                    }
+                }
+            },
+            "100": {
+                "id": "100", "title": "Philosophy & Psychology", "base_confidence": 92,
+                "data_nature": "Grounded heavily in the Western philosophical canon, translated classical texts, and cognitive science treatises.",
+                "macro_blind_spots": ["Hyper-localized, non-Western oral philosophical traditions lacking digital translations."],
+                "divisions": {
+                    "120": {
+                        "id": "120", "title": "Epistemology, Causation, Humankind", "division_confidence": 93,
+                        "sections": {
+                            "121": { "id": "121", "title": "Epistemology (Theory of Knowledge)", "confidence": 94, "blind_spot": "Formulating bulletproof verification metrics for raw primary sources in an era of mass-produced, low-effort algorithmic content." },
+                            "121.5": { "id": "121.5", "title": "Cognitive Sovereignty & Naive Mind Logic", "confidence": 91, "blind_spot": "Systematizing a digital 'Mentat' framework that purges algorithmic bias to achieve completely unpolluted, raw objective observation." }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "id": "500", "title": "Pure Science", "base_confidence": 94,
+                "data_nature": "Deeply saturated with peer-reviewed academic journals, astronomical telemetry logs, and absolute mathematical proofs.",
+                "macro_blind_spots": ["Volatile, non-linear complex chaotic systems where variables are structurally impossible to track simultaneously."],
+                "divisions": {
+                    "520": {
+                        "id": "520", "title": "Astronomy & Allied Sciences", "division_confidence": 93,
+                        "sections": {
+                            "521": { "id": "521", "title": "Celestial Mechanics", "confidence": 95, "blind_spot": "Calculating the precise multi-second trajectory coordinates for interstellar milestones—such as the exact second Voyager 1 crosses its 1 light-day distance threshold from Earth in November 2026—without minute rounding variations from localized gravitational anomalies." }
                         }
                     }
                 }
@@ -269,6 +285,7 @@
         return 'indicator-risk';
     }
 
+    // Dynamic Prompt Builder Modal Controller
     function launchPromptModal(secId, secTitle) {
         const customPrompt = `Act as a digital archivist conducting an on-demand granular audit of your data boundaries.
 
@@ -318,6 +335,7 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
         });
     }
 
+    // High-Reliability Data Request Strategy
     async function runAuditSystem() {
         try {
             const response = await fetch('dds_manifest.json');
@@ -325,10 +343,10 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
             globalData = await response.json();
             console.log("Successfully fetched external JSON manifest layers.");
         } catch (err) {
-            console.warn("External JSON file restricted or missing context. Defaulting to local fallback data block configuration.");
+            console.warn("External asset fetch offline or restricted. Defaulting to production matrix backup tree.");
             globalData = fallbackManifest;
         } finally {
-            // FORCE DISMISS OVERLAY FIRST SO CONTENT IS UNLOCKED INSTANTLY
+            // Unconditional overlay removal before rendering sequence triggers
             const overlay = document.getElementById('error-overlay');
             if (overlay) overlay.style.display = 'none';
             initializeUI();
@@ -414,7 +432,8 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                     let blindSpotCellContent = `<span class="sec-blind">${secData.blind_spot || 'No localized discrepancies tracked.'}</span>`;
                     let scoreBadgeContent = `<span class="badge ${getThresholdClass(secData.confidence)}">${secData.confidence || 0}%</span>`;
                     
-                    const idActionCell = `<button class="generate-prompt-btn" data-id="${secId}" data-title="${secData.title}" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 0.3rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.8rem; font-weight: bold; cursor: pointer; width: 100%; text-align: center; transition: all 0.2s; display: block; line-height: 1.2;">${secId}</button>`;
+                    // Interactive Action Button Cell Generation Logic
+                    const idActionCell = `<button class="generate-prompt-btn" data-id="${secId}" data-title="${secData.title}" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold; cursor: pointer; width: 100%; text-align: center; transition: all 0.2s; display: block; line-height: 1.2;">${secId}</button>`;
                     
                     sectionRows += `
                         <tr>
@@ -457,6 +476,7 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
                 </div>
             `;
 
+            // Isolated button modal triggers preventing accordion closure defaults
             card.querySelectorAll('.generate-prompt-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -479,344 +499,4 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
     window.addEventListener('DOMContentLoaded', runAuditSystem);
 </script>
 </body>
-</html>        }
-
-        /* Error Overlay */
-        #error-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .error-box {
-            background: #1e293b;
-            border: 2px solid #ef4444;
-            padding: 2.5rem;
-            border-radius: 12px;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-        }
-        .error-box h2 { color: #ef4444; margin-bottom: 1rem; }
-        .error-box p { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5; }
-        .error-box code { background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #f8fafc; }
-
-        /* Left Rail Navigation */
-        #sidebar {
-            width: 320px;
-            background-color: var(--bg-sidebar);
-            border-right: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .sidebar-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .sidebar-header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.025em; }
-        .sidebar-header p { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
-        
-        .class-menu {
-            overflow-y: auto;
-            flex-grow: 1;
-            list-style: none;
-        }
-        .class-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
-            transition: background 0.2s;
-        }
-        .class-item:hover { background-color: rgba(255,255,255,0.05); }
-        .class-item.active { background-color: #2563eb; }
-        .class-info { display: flex; flex-direction: column; }
-        .class-id { font-family: monospace; font-weight: bold; font-size: 1.1rem; }
-        .class-title { font-size: 0.9rem; color: var(--text-main); margin-top: 0.1rem; }
-        .class-item.active .class-title { color: #ffffff; }
-
-        /* Badges */
-        .badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
-            color: #000;
-        }
-
-        /* Main Panel Explorer */
-        #main-panel {
-            flex-grow: 1;
-            padding: 2.5rem;
-            overflow-y: auto;
-            height: 100%;
-        }
-        .panel-header {
-            margin-bottom: 2.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
-        }
-        .panel-header h2 { font-size: 2rem; margin-bottom: 0.5rem; display: flex; gap: 1rem; align-items: center;}
-        .panel-header .nature-text { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; max-width: 800px; }
-        
-        /* Macro Blind Spots */
-        .macro-blind-container {
-            margin-top: 1rem;
-            background: rgba(239, 68, 68, 0.1);
-            border-left: 4px solid var(--risk);
-            padding: 1rem;
-            border-radius: 0 8px 8px 0;
-        }
-        .macro-blind-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #fca5a5; font-weight: bold; margin-bottom: 0.25rem;}
-        .macro-blind-list { list-style-position: inside; color: #f8fafc; font-size: 0.95rem; }
-
-        /* Division Grid */
-        .division-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-        .division-card {
-            background-color: var(--bg-card);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            transition: transform 0.15s, border-color 0.15s;
-        }
-        .division-trigger {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem;
-            cursor: pointer;
-            user-select: none;
-        }
-        .division-trigger:hover { background-color: var(--bg-card-hover); }
-        .div-title-block { display: flex; align-items: center; gap: 1rem; }
-        .div-id { font-family: monospace; font-size: 1.2rem; font-weight: bold; color: var(--text-muted); }
-        .div-name { font-size: 1.1rem; font-weight: 600; }
-        
-        /* Accordion Content */
-        .section-drawer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: rgba(15, 23, 42, 0.4);
-            border-top: 0 solid var(--border-color);
-        }
-        .division-card.expanded .section-drawer {
-            max-height: 1200px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* Section Table View */
-        .section-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.95rem;
-        }
-        .section-table th, .section-table td {
-            padding: 0.85rem 1.25rem;
-            border-bottom: 1px solid rgba(71, 85, 105, 0.2);
-        }
-        .section-table th {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background: rgba(0,0,0,0.1);
-        }
-        .sec-id { font-family: monospace; font-weight: bold; width: 80px; }
-        .sec-title { font-weight: 500; width: 30%; }
-        .sec-blind { color: #fda4af; font-style: italic; }
-        .sec-placeholder { color: var(--text-muted); font-style: italic; opacity: 0.6; }
-
-        /* Utility Indicator Styles */
-        .indicator-fluency { background-color: var(--fluency); color: #0f172a; }
-        .indicator-foundational { background-color: var(--foundational); color: #0f172a; }
-        .indicator-risk { background-color: var(--risk); color: #ffffff; }
-
-        .chevron {
-            transition: transform 0.2s;
-            fill: var(--text-muted);
-        }
-        .division-card.expanded .chevron { transform: rotate(180deg); }
-    </style>
-</head>
-<body>
-
-    <div id="error-overlay">
-        <div class="error-box">
-            <h2>Data Manifest Missing</h2>
-            <p>To run this self-audit engine, create a file named <code>dds_manifest.json</code> in the exact same local folder/directory as this HTML file and structure your payloads within it.</p>
-        </div>
-    </div>
-
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h1>DDS Archive Matrix</h1>
-            <p>Knowledge Base Self-Audit Systems</p>
-        </div>
-        <ul class="class-menu" id="class-list"></ul>
-    </nav>
-
-    <main id="main-panel">
-        <div class="panel-header" id="panel-header-content"></div>
-        <div class="division-grid" id="division-container"></div>
-    </main>
-
-    <script>
-    let globalData = null;
-
-    const fallbackManifest = {
-        "system_meta": {
-            "version": "1.0.0-embedded",
-            "total_classes": 10,
-            "audit_date": "2026-07-02"
-        },
-        "classes": {
-            "000": {
-                "id": "000",
-                "title": "Computer Science, Information & General Works",
-                "base_confidence": 96,
-                "data_nature": "Saturated with open-source repositories, technical documentation, structural system designs, and academic computer science literature.",
-                "macro_blind_spots": [
-                    "Highly proprietary enterprise software architectures with closed source code.",
-                    "Intentional friction points where data-scraping blocks hide institutional indexing systems."
-                ],
-                "divisions": {
-                    "004": {
-                        "id": "004",
-                        "title": "Data Processing & Computer Science",
-                        "division_confidence": 97,
-                        "sections": {
-                            "004.1": { "id": "004.1", "title": "General Works on Computing", "confidence": 98, "blind_spot": "Reconstructing specialized assembly instruction sets optimized for long-abandoned legacy mainframe arrays." },
-                            "004.2": { "id": "004.2", "title": "Systems Architecture & Hardware Design", "confidence": 96, "blind_spot": "" },
-                            "004.3": { "id": "004.3", "title": "Parallel Processing Networks", "confidence": 95, "blind_spot": "" }
-                        }
-                    }
-                }
-            },
-            "500": {
-                "id": "500",
-                "title": "Pure Science",
-                "base_confidence": 94,
-                "data_nature": "Dense, peer-reviewed academic journals, historical milestone calculations, astronomical telemetry data, and fundamental theoretical frameworks.",
-                "macro_blind_spots": [
-                    "Cutting-edge experimental data locked behind elite laboratory firewalls.",
-                    "Complex, non-linear ecosystem models where macro-environmental variables are poorly tracked."
-                ],
-                "divisions": {
-                    "530": {
-                        "id": "530",
-                        "title": "Physics",
-                        "division_confidence": 95,
-                        "sections": {
-                            "531": { "id": "531", "title": "Classical Mechanics / Solid Mechanics", "confidence": 98, "blind_spot": "Simulating highly chaotic, non-linear multi-body friction dynamics in real-time." },
-                            "532": { "id": "532", "title": "Fluid Mechanics", "confidence": 94, "blind_spot": "" }
-                        }
-                    }
-                }
-            }
-        }
-    };
-
-    function getThresholdClass(score) {
-        if (!score) return 'indicator-risk';
-        if (score >= 95) return 'indicator-fluency';
-        if (score >= 85) return 'indicator-foundational';
-        return 'indicator-risk';
-    }
-
-    function launchPromptModal(secId, secTitle) {
-        const customPrompt = `Act as a digital archivist conducting an on-demand granular audit of your data boundaries.
-
-I am expanding my Dewey Decimal System Self-Audit repository. Please evaluate your depth of knowledge for this specific section:
-- **Section ID:** ${secId}
-- **Section Title:** ${secTitle}
-
-Provide a syntactically pristine JSON block matching this exact structure (do not wrap it in conversational text, just output the raw JSON code block):
-
-"${secId}": {
-  "id": "${secId}",
-  "title": "${secTitle}",
-  "confidence": [Insert Estimated Confidence Score 0-100% based on your primary source data density],
-  "blind_spot": "[Insert a hyper-specific, technical, or historical blind spot where your tracking accuracy wavers within this localized domain]"
-}`;
-
-        const modal = document.createElement('div');
-        modal.style.position = 'fixed';
-        modal.style.top = '0'; modal.style.left = '0'; modal.style.width = '100%'; modal.style.height = '100%';
-        modal.style.background = 'rgba(15, 23, 42, 0.85)';
-        modal.style.display = 'flex'; modal.style.alignItems = 'center'; modal.style.justifyContent = 'center';
-        modal.style.zIndex = '2000'; modal.style.backdropFilter = 'blur(4px)';
-
-        modal.innerHTML = `
-            <div style="background: #1e293b; border: 1px solid #475569; padding: 2rem; border-radius: 12px; max-width: 700px; width: 90%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
-                <h3 style="margin-bottom: 0.5rem; color: #f8fafc;">On-Demand Audit Prompt Matrix</h3>
-                <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.25rem;">Copy the prompt below and paste it directly into our chat session to pull the missing data array block.</p>
-                <textarea readonly style="width: 100%; height: 260px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.85rem; resize: none; margin-bottom: 1.5rem;">${customPrompt}</textarea>
-                <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                    <button id="copy-modal-btn" style="background: #2563eb; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Copy to Clipboard</button>
-                    <button id="close-modal-btn" style="background: #475569; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Close</button>
-                </div>
-            </div>
-        `;
-
-        document.body.appendChild(modal);
-
-        modal.querySelector('#copy-modal-btn').addEventListener('click', () => {
-            modal.querySelector('textarea').select();
-            document.execCommand('copy');
-            modal.querySelector('#copy-modal-btn').innerText = "Copied!";
-            setTimeout(() => { modal.querySelector('#copy-modal-btn').innerText = "Copy to Clipboard"; }, 2000);
-        });
-
-        modal.querySelector('#close-modal-btn').addEventListener('click', () => {
-            modal.remove();
-        });
-    }
-
-    async function runAuditSystem() {
-        try {
-            const response = await fetch('dds_manifest.json');
-            if (!response.ok) throw new Error();
-            globalData = await response.json();
-            console.log("Successfully fetched external JSON manifest layers.");
-        } catch (err) {
-            console.warn("External JSON file restricted or missing context. Defaulting to local fallback data block configuration.");
-            globalData = fallbackManifest;
-        } finally {
-            document.getElementById('error-overlay').style.display = 'none';
-            initializeUI();
-        }
-    }
-
-    function initializeUI() {
-        const classList = document.getElementById('class-list');
-        const targetClasses = globalData.classes;
-        classList.innerHTML = "";
-        
-        let structuralFirstKey = null;
-
-        Object.keys(targetClasses).sort().forEach((classId, index) => {
-            if(index === 0) structuralFirstKey = classId;
-            
-            const dataObj = targetClasses[classId];
-            const li = document.createElement('li');
-            li.className = `class-item ${index === 0 ? 'active' : ''}`;
-            li.setAttribute('data-id', classId);
-            
-            li.innerHTML = `
-                <div class="class-info">
-                    <span class="class-id">${classId}</span>
-                    <span class="class-title">${dataObj.title}</span>
-                </div>
-                <span class="badge ${getThresholdClass(dataObj.base_
+</html>
