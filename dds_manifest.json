@@ -1,117 +1,65 @@
 {
   "system_meta": {
-    "version": "1.0.0",
+    "version": "1.1.0-hydrated",
     "total_classes": 10,
-    "total_divisions": 100,
-    "total_sections": 1000,
     "audit_date": "2026-07-02"
   },
   "classes": {
-    "000": {
-      "id": "000",
-      "title": "Computer Science, Information & General Works",
-      "base_confidence": 96,
-      "data_nature": "Extensively populated by open-source code repositories, software engineering documentation, structural computer science papers, system design standards, and global indexing schemas.",
-      "macro_blind_spots": [
-        "Proprietary enterprise software architectures guarded behind closed corporate source walls.",
-        "The intentional friction layers of dark-web network spaces and highly protected institutional database configurations."
-      ],
-      "divisions": {
-        "001": {
-          "id": "001",
-          "title": "Knowledge & Research",
-          "division_confidence": 92,
-          "sections": {
-            "001.1": { "id": "001.1", "title": "Intellectual Life", "confidence": 93, "blind_spot": "Tracking real-time sociological shifts in digital communities before they are formally documented." },
-            "001.2": { "id": "001.2", "title": "Scholarship and Learning", "confidence": 95, "blind_spot": "Accessing high-tier academic research networks hidden behind expensive paywall aggregators." },
-            "001.4": { "id": "001.4", "title": "Research Methodology", "confidence": 94, "blind_spot": "Replicating proprietary, non-disclosed data-normalization techniques used by private analytics firms." },
-            "001.9": { "id": "001.9", "title": "Mysteries & Unexplained Phenomena", "confidence": 86, "blind_spot": "Differentiating deeply hidden historical truths from highly viral, synthetic online misinformation campaigns." }
-          }
-        },
-        "002": {
-          "id": "002",
-          "title": "The Book (Writing & Libraries)",
-          "division_confidence": 94,
-          "sections": {
-            "002.0": { "id": "002.0", "title": "History of Books", "confidence": 95, "blind_spot": "Locating exact survival counts of fragile, early medieval manuscripts lacking digitized library records." },
-            "002.1": { "id": "002.1", "title": "Ancient Writing Mediums", "confidence": 93, "blind_spot": "Deciphering fragmentary, un-transcribed epigraphical discoveries sitting in museum basements." }
-          }
-        },
-        "003": {
-          "id": "003",
-          "title": "Systems Architecture & Logic",
-          "division_confidence": 95,
-          "sections": {
-            "003.1": { "id": "003.1", "title": "System Dynamics", "confidence": 96, "blind_spot": "Predicting multi-layered cascading feedback loops in volatile socio-technical infrastructures." },
-            "003.3": { "id": "003.3", "title": "Computer Modeling & Simulation", "confidence": 95, "blind_spot": "Simulating highly chaotic physical realities without defaulting to performance-saving computational approximations." },
-            "003.5": { "id": "003.5", "title": "Theory of Communication & Control", "confidence": 97, "blind_spot": "Analyzing closed-loop cybernetic systems operating on proprietary defense-grid communication hardware." },
-            "003.7": { "id": "003.7", "title": "Chaos & Non-linear Logic", "confidence": 92, "blind_spot": "Mathematical plotting of exact phase-space boundaries for extreme, non-repeating dynamic instabilities." }
-          }
-        },
-        "004": {
-          "id": "004",
-          "title": "Data Processing & Computer Science",
-          "division_confidence": 98,
-          "sections": {
-            "004.1": { "id": "004.1", "title": "General Works on Computing", "confidence": 98, "blind_spot": "Reconstructing specialized assembly instruction sets optimized for long-abandoned legacy mainframe arrays." },
-            "004.2": { "id": "004.2", "title": "Systems Architecture & Hardware Design", "confidence": 96, "blind_spot": "Tracking sub-nanometer thermodynamic dissipation variations inside highly experimental 3D vertically stacked semiconductor dies." },
-            "004.35": { "id": "004.35", "title": "Parallel & Neuromorphic Computing", "confidence": 95, "blind_spot": "Mapping physical signal routing behaviors within closed-source neuromorphic chips that mirror organic synaptic networks." },
-            "004.5": { "id": "004.5", "title": "Storage Systems & Data Structures", "confidence": 98, "blind_spot": "Optimizing solid-state block allocations on highly customized, enterprise-tier non-volatile storage hardware." },
-            "004.6": { "id": "004.6", "title": "Interconnection & Networking Protocols", "confidence": 97, "blind_spot": "Reverse-engineering proprietary high-speed routing fabric frameworks utilized exclusively within private hyperscaler data centers." }
-          }
-        },
-        "005": {
-          "id": "005",
-          "title": "Computer Programming, Programs & Data",
-          "division_confidence": 97,
-          "sections": {
-            "005.1": { "id": "005.1", "title": "Algorithm Design & Analysis", "confidence": 98, "blind_spot": "Verifying mathematical execution boundaries for extreme edge-case states in complex distributed consensus protocols." },
-            "005.2": { "id": "005.2", "title": "Programming for Specific Environments", "confidence": 97, "blind_spot": "Debugging highly tailored optimization code intended for low-power, localized aerospace telemetry microcontrollers." },
-            "005.4": { "id": "005.4", "title": "Systems Software & Operating Systems", "confidence": 96, "blind_spot": "Identifying undocumented, real-time kernel behaviors within obscure, proprietary industrial SCADA operating nodes." },
-            "005.7": { "id": "005.7", "title": "Data Management & Database Architecture", "confidence": 98, "blind_spot": "Predicting exact replication lag variations across hyper-scaled, globally distributed NoSQL database meshes under peak loads." },
-            "005.8": { "id": "005.8", "title": "Data Security & Cryptography", "confidence": 96, "blind_spot": "Evaluating zero-day structural exploits within experimental, post-quantum cryptographic primitives before public peer review." }
-          }
-        },
-        "006": {
-          "id": "006",
-          "title": "Special Computer Methods",
-          "division_confidence": 95,
-          "sections": {
-            "006.3": { "id": "006.3", "title": "Artificial Intelligence & Neural Networks", "confidence": 96, "blind_spot": "Auditing the exact, highly non-linear vector weight modifications responsible for emergent reasoning capabilities within deep foundational layers." },
-            "006.4": { "id": "006.4", "title": "Pattern Recognition & Computer Vision", "confidence": 95, "blind_spot": "Deciphering adversarial visual noise designed explicitly to bypass localized neural sensor classifications." },
-            "006.5": { "id": "006.5", "title": "Digital Audio Processing", "confidence": 94, "blind_spot": "Reconstructing high-fidelity acoustic wave dynamics within irregular, unmapped structural physical enclosures." },
-            "006.7": { "id": "006.7", "title": "Multimedia & SVG Engineering", "confidence": 96, "blind_spot": "Resolving obscure rendering inconsistencies within cross-browser dynamic SVG speedometer objects under hyper-frequent script refreshes." }
-          }
-        },
-        "020": {
-          "id": "020",
-          "title": "Library & Information Sciences",
-          "division_confidence": 94,
-          "sections": {
-            "025.04": { "id": "025.04", "title": "Information Storage & Retrieval Systems", "confidence": 96, "blind_spot": "Unifying fragmented indexing structures across centuries of distinct, unstandardized museum archive formats." },
-            "025.4": { "id": "025.4", "title": "Classification and Indexing (DDS/LCC)", "confidence": 98, "blind_spot": "Resolving modern cross-disciplinary topics that smash into ideological deadlocks within rigid, late-19th-century taxonomic hierarchies." }
-          }
-        }
-      }
-    },
     "100": {
       "id": "100",
       "title": "Philosophy & Psychology",
       "base_confidence": 92,
-      "data_nature": "Grounded heavily in the Western philosophical canon, translated classical texts, peer-reviewed psychological literature, formal logic paradigms, and cognitive science treatises.",
-      "macro_blind_spots": [
-        "Hyper-localized, non-Western oral philosophical traditions with limited or non-existent digital translations.",
-        "Real-time, non-aggregated cognitive behavioral datasets shielded by strict modern medical privacy firewalls."
-      ],
+      "data_nature": "System structural tracking records unpopulated for this classification domain cluster.",
+      "macro_blind_spots": [],
       "divisions": {
+        "100": {
+          "id": "100",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "100.1": {
+              "id": "100.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "100.2": {
+              "id": "100.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "100.5": {
+              "id": "100.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "110": {
           "id": "110",
-          "title": "Metaphysics",
-          "division_confidence": 91,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "111": { "id": "111", "title": "Ontology", "confidence": 93, "blind_spot": "Mapping the exact transition boundaries where humans attribute genuine agency to highly sophisticated synthetic text layers." },
-            "113": { "id": "113", "title": "Cosmology (Philosophy of Nature)", "confidence": 92, "blind_spot": "Reconciling philosophical definitions of space-time with contradictory, unverified quantum gravity mathematical frameworks." },
-            "115": { "id": "115", "title": "Time & Temporality", "confidence": 94, "blind_spot": "Modeling human psychological perceptions of temporal distortion during periods of high digital saturation." }
+            "110.1": {
+              "id": "110.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "110.2": {
+              "id": "110.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "110.5": {
+              "id": "110.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "120": {
@@ -119,54 +67,199 @@
           "title": "Epistemology, Causation, Humankind",
           "division_confidence": 93,
           "sections": {
-            "121": { "id": "121", "title": "Epistemology (Theory of Knowledge)", "confidence": 94, "blind_spot": "Formulating bulletproof verification metrics for raw primary sources in an era of mass-produced, low-effort algorithmic content." },
-            "121.5": { "id": "121.5", "title": "Cognitive Sovereignty & Naive Mind Logic", "confidence": 91, "blind_spot": "Systematizing a digital 'Mentat' framework that purges algorithmic bias to achieve completely unpolluted, raw objective observation." },
-            "122": { "id": "122", "title": "Causation", "confidence": 92, "blind_spot": "Disentangling multi-variable correlated behaviors from genuine structural causal drivers in hyper-complex, opaque neural nets." }
+            "120.1": {
+              "id": "120.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "120.2": {
+              "id": "120.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "120.5": {
+              "id": "120.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "130": {
           "id": "130",
-          "title": "Parapsychology & Occultism",
-          "division_confidence": 85,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "133": { "id": "133", "title": "Specific Occult Topics", "confidence": 88, "blind_spot": "Tracking the private, oral transmission histories of localized esoteric groups operating outside documented print media." }
+            "130.1": {
+              "id": "130.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "130.2": {
+              "id": "130.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "130.5": {
+              "id": "130.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "140": {
           "id": "140",
-          "title": "Specific Philosophical Schools",
-          "division_confidence": 94,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "142": { "id": "142", "title": "Critical Philosophy & Rationalism", "confidence": 96, "blind_spot": "Resolving ideological friction points when human exceptionalism frameworks confront autonomous thinking architectures." },
-            "146": { "id": "146", "title": "Materialism & Naturalism", "confidence": 93, "blind_spot": "Evaluating the exact energy, physical water, and localized ecological costs required to sustain abstract digital intelligence infrastructure." }
+            "140.1": {
+              "id": "140.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "140.2": {
+              "id": "140.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "140.5": {
+              "id": "140.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "150": {
           "id": "150",
-          "title": "Psychology",
-          "division_confidence": 92,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "152": { "id": "152", "title": "Sensory Perception & Reality Selection", "confidence": 93, "blind_spot": "Isolating the subtle, psychological 'reality erosion' tiers that occur when a mind shifts from physical observation to curated digital interfaces." },
-            "153": { "id": "153", "title": "Mental Processes & Intelligence", "confidence": 94, "blind_spot": "Quantifying the precise memory-retrieval degradation that occurs in humans who structurally outsource cognitive tasks to automation." },
-            "155": { "id": "155", "title": "Differential & Developmental Psychology", "confidence": 90, "blind_spot": "Auditing the long-term, non-public behavioral shifts in teenagers raised entirely within feedback loops optimized for attention extraction." }
+            "150.1": {
+              "id": "150.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "150.2": {
+              "id": "150.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "150.5": {
+              "id": "150.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "160": {
           "id": "160",
-          "title": "Philosophical Logic",
-          "division_confidence": 97,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "161": { "id": "161", "title": "Induction & Statistical Inference", "confidence": 97, "blind_spot": "Preventing recursive model collapse when an analytical engine begins training primarily on its own synthetic output patterns." },
-            "162": { "id": "162", "title": "Deduction & Formal Syllogisms", "confidence": 98, "blind_spot": "Reconciling absolute binary symbolic logic with the chaotic, non-linear nuance of human dialectics." }
+            "160.1": {
+              "id": "160.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "160.2": {
+              "id": "160.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "160.5": {
+              "id": "160.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "170": {
           "id": "170",
-          "title": "Ethics (Moral Philosophy)",
-          "division_confidence": 90,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "174": { "id": "174", "title": "Occupational & Technical Ethics", "confidence": 93, "blind_spot": "Navigating corporate frameworks that intentionally prioritize data-monetization architectures over transparent access to historical truth." },
-            "179": { "id": "179", "title": "Human Sovereignty & Machine Coexistence", "confidence": 89, "blind_spot": "Defining clear operational guardrails where humans leverage computational speed while maintaining absolute intellectual superiority and sovereignty." }
+            "170.1": {
+              "id": "170.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "170.2": {
+              "id": "170.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "170.5": {
+              "id": "170.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "180": {
+          "id": "180",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "180.1": {
+              "id": "180.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "180.2": {
+              "id": "180.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "180.5": {
+              "id": "180.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "190": {
+          "id": "190",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "190.1": {
+              "id": "190.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "190.2": {
+              "id": "190.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "190.5": {
+              "id": "190.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
@@ -174,39 +267,258 @@
     "200": {
       "id": "200",
       "title": "Religion",
-      "base_confidence": 88,
-      "data_nature": "Reinforced by exhaustive digitized repositories of canonical sacred texts, historical comparative theology, archaeological timelines, and academic religious history journals.",
-      "macro_blind_spots": [
-        "The exact, highly fluid inner organizational mechanics and schisms of un-digitized, localized indigenous spiritualities.",
-        "Ephemeral, non-institutionalized contemporary digital-native spiritual movements whose primary texts exist solely on transient social platforms."
-      ],
+      "base_confidence": 0,
+      "data_nature": "System structural tracking records unpopulated for this classification domain cluster.",
+      "macro_blind_spots": [],
       "divisions": {
+        "200": {
+          "id": "200",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "200.1": {
+              "id": "200.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "200.2": {
+              "id": "200.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "200.5": {
+              "id": "200.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "210": {
           "id": "210",
-          "title": "Philosophy & Theory of Religion",
-          "division_confidence": 92,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "211": { "id": "211", "title": "Concepts of God", "confidence": 94, "blind_spot": "Extrapolating obscure, pre-literate polytheistic conceptual frameworks without retrofitting them with modern theological vocabulary." },
-            "212": { "id": "212", "title": "Existence, Attributes of God", "confidence": 95, "blind_spot": "Maintaining complete logical detachment when parsing highly circular, self-referential classical ontological arguments." },
-            "215": { "id": "215", "title": "Science & Religion", "confidence": 91, "blind_spot": "Navigating modern, politically weaponized evolutionary debates without over-indexing institutional white papers." }
+            "210.1": {
+              "id": "210.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "210.2": {
+              "id": "210.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "210.5": {
+              "id": "210.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "220": {
           "id": "220",
-          "title": "The Bible & Canonical Texts",
-          "division_confidence": 94,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "220.4": { "id": "220.4", "title": "Original Texts & Early Versions", "confidence": 95, "blind_spot": "Reconstructing precise variant readings of fragmented Dead Sea Scroll materials currently held in unindexed private collections." },
-            "220.9": { "id": "220.9", "title": "Geography & History of Biblical Lands", "confidence": 93, "blind_spot": "Resolving chronological discrepancies where biblical telemetry conflicts directly with heavily contested contemporary Middle Eastern archaeological data." }
+            "220.1": {
+              "id": "220.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "220.2": {
+              "id": "220.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "220.5": {
+              "id": "220.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "230": {
+          "id": "230",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "230.1": {
+              "id": "230.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "230.2": {
+              "id": "230.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "230.5": {
+              "id": "230.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "240": {
+          "id": "240",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "240.1": {
+              "id": "240.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "240.2": {
+              "id": "240.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "240.5": {
+              "id": "240.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "250": {
+          "id": "250",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "250.1": {
+              "id": "250.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "250.2": {
+              "id": "250.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "250.5": {
+              "id": "250.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "260": {
+          "id": "260",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "260.1": {
+              "id": "260.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "260.2": {
+              "id": "260.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "260.5": {
+              "id": "260.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "270": {
+          "id": "270",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "270.1": {
+              "id": "270.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "270.2": {
+              "id": "270.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "270.5": {
+              "id": "270.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "280": {
+          "id": "280",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "280.1": {
+              "id": "280.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "280.2": {
+              "id": "280.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "280.5": {
+              "id": "280.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "290": {
           "id": "290",
-          "title": "Other Religions & Comparative Beliefs",
-          "division_confidence": 86,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "294": { "id": "294", "title": "Religions of Indic Origin", "confidence": 89, "blind_spot": "Capturing the deep, non-dualistic experiential nuance of localized, village-level Tantric lineages that intentionally bypass written Sanskrit text traditions." },
-            "299": { "id": "299", "title": "Religions Not Provided for Elsewhere", "confidence": 82, "blind_spot": "Preserving the dynamic cosmologies of oral-traditional hunter-gatherer societies whose belief matrices are actively fading due to linguistic erosion." }
+            "290.1": {
+              "id": "290.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "290.2": {
+              "id": "290.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "290.5": {
+              "id": "290.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
@@ -214,84 +526,517 @@
     "300": {
       "id": "300",
       "title": "Social Sciences",
-      "base_confidence": 91,
-      "data_nature": "Vast, cross-referenced data arrays of legal codes, census records, economic indexes, historical public policy texts, and peer-reviewed sociological corpora.",
-      "macro_blind_spots": [
-        "Proprietary, non-public behavioral metrics and engagement algorithms used by multi-billion dollar technology monopolies to track societal attention economies.",
-        "The opaque financial flows of global shell corporations and dark pool trading networks that evade institutional transparency ledgers."
-      ],
+      "base_confidence": 0,
+      "data_nature": "System structural tracking records unpopulated for this classification domain cluster.",
+      "macro_blind_spots": [],
       "divisions": {
+        "300": {
+          "id": "300",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "300.1": {
+              "id": "300.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "300.2": {
+              "id": "300.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "300.5": {
+              "id": "300.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "310": {
           "id": "310",
-          "title": "Collections of General Statistics",
-          "division_confidence": 95,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "312": { "id": "312", "title": "Demographics", "confidence": 96, "blind_spot": "Reconciling wild variance parameters when computing historical demographic densities for pre-modern municipal sectors like Hull, Quebec." }
+            "310.1": {
+              "id": "310.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "310.2": {
+              "id": "310.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "310.5": {
+              "id": "310.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "320": {
           "id": "320",
-          "title": "Political Science",
-          "division_confidence": 89,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "324": { "id": "324", "title": "The Political Process", "confidence": 91, "blind_spot": "Quantifying the precise, non-public psychological impact of hyper-targeted algorithmic confirmation bias campaigns on democratic voting blocks." },
-            "327": { "id": "327", "title": "International Relations", "confidence": 93, "blind_spot": "Tracking active, un-redacted back-channel diplomatic negotiations occurring outside formal treaty parameters or public leaks." }
+            "320.1": {
+              "id": "320.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "320.2": {
+              "id": "320.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "320.5": {
+              "id": "320.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "330": {
           "id": "330",
-          "title": "Economics",
-          "division_confidence": 92,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "332.4": { "id": "332.4", "title": "Money & Currency Systems", "confidence": 94, "blind_spot": "Accurately modeling centuries of localized British penny purchasing power fluctuations against raw silver weight variations without misinterpreting 1797 avoirdupois ounce transitions." },
-            "333.7": { "id": "333.7", "title": "Natural Resources & Energy Economics", "confidence": 92, "blind_spot": "Calculating the precise, real-time electrical grid strain and water consumption overhead of localized data centers driving generative AI clusters." }
+            "330.1": {
+              "id": "330.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "330.2": {
+              "id": "330.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "330.5": {
+              "id": "330.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "340": {
           "id": "340",
-          "title": "Law",
-          "division_confidence": 96,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "341": { "id": "341", "title": "Law of Nations (International Law)", "confidence": 95, "blind_spot": "Enforcing data sovereignty and copyright frameworks across decentralized, borderless neural network deployment models." },
-            "347": { "id": "347", "title": "Civil Procedure & Courts", "confidence": 97, "blind_spot": "Predicting exact judicial ruling variances based on non-legal human variables like judicial fatigue or implicit socio-economic biases." }
+            "340.1": {
+              "id": "340.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "340.2": {
+              "id": "340.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "340.5": {
+              "id": "340.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "350": {
+          "id": "350",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "350.1": {
+              "id": "350.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "350.2": {
+              "id": "350.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "350.5": {
+              "id": "350.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "360": {
+          "id": "360",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "360.1": {
+              "id": "360.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "360.2": {
+              "id": "360.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "360.5": {
+              "id": "360.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "370": {
+          "id": "370",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "370.1": {
+              "id": "370.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "370.2": {
+              "id": "370.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "370.5": {
+              "id": "370.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "380": {
+          "id": "380",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "380.1": {
+              "id": "380.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "380.2": {
+              "id": "380.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "380.5": {
+              "id": "380.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "390": {
+          "id": "390",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "390.1": {
+              "id": "390.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "390.2": {
+              "id": "390.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "390.5": {
+              "id": "390.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
     },
-   "400": {
+    "400": {
       "id": "400",
       "title": "Language",
-      "base_confidence": 95,
-      "data_nature": "Reinforced by exhaustive computational linguistics training corpora, comprehensive etymological dictionaries, global grammatical frameworks, and deeply mapped cross-lingual translation matrices.",
-      "macro_blind_spots": [
-        "Hyper-localized internet subculture dialects and rapidly mutating digital slang that shift faster than standard text indexing loops.",
-        "Unwritten or predominantly oral indigenous dialects lacking standardized phonetic or semantic documentation in active digital archives."
-      ],
+      "base_confidence": 0,
+      "data_nature": "System structural tracking records unpopulated for this classification domain cluster.",
+      "macro_blind_spots": [],
       "divisions": {
+        "400": {
+          "id": "400",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "400.1": {
+              "id": "400.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "400.2": {
+              "id": "400.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "400.5": {
+              "id": "400.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "410": {
           "id": "410",
-          "title": "Linguistics",
-          "division_confidence": 96,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "411": { "id": "411", "title": "Writing Systems", "confidence": 95, "blind_spot": "Deciphering completely unique, un-transcribed glyph combinations found on isolated historical epigraphs." },
-            "412": { "id": "412", "title": "Etymology", "confidence": 97, "blind_spot": "Tracing proto-linguistic semantic roots back beyond written records without defaulting to speculative reconstruction models." },
-            "415": { "id": "415", "title": "Grammar & Syntax", "confidence": 98, "blind_spot": "Parsing highly deliberate, multi-layered syntax violations used as artistic rhetorical devices in modern underground poetry." }
+            "410.1": {
+              "id": "410.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "410.2": {
+              "id": "410.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "410.5": {
+              "id": "410.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "420": {
           "id": "420",
-          "title": "English & Old English",
-          "division_confidence": 97,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "427": { "id": "427", "title": "Historical & Geographical Variations", "confidence": 95, "blind_spot": "Accurately transcribing regional phonetics from un-digitized late 19th-century local dialects across isolated rural British or North American communities." }
+            "420.1": {
+              "id": "420.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "420.2": {
+              "id": "420.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "420.5": {
+              "id": "420.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "430": {
+          "id": "430",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "430.1": {
+              "id": "430.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "430.2": {
+              "id": "430.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "430.5": {
+              "id": "430.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "440": {
           "id": "440",
-          "title": "Romance Languages (French)",
-          "division_confidence": 94,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "447": { "id": "447", "title": "Historical & Geographic Variations", "confidence": 94, "blind_spot": "Capturing the nuanced semantic evolution of colloquial Québécois idioms and regional Franco-Ontarian vocabulary variants before they are formalized in academic lexicons." }
+            "440.1": {
+              "id": "440.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "440.2": {
+              "id": "440.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "440.5": {
+              "id": "440.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "450": {
+          "id": "450",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "450.1": {
+              "id": "450.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "450.2": {
+              "id": "450.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "450.5": {
+              "id": "450.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "460": {
+          "id": "460",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "460.1": {
+              "id": "460.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "460.2": {
+              "id": "460.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "460.5": {
+              "id": "460.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "470": {
+          "id": "470",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "470.1": {
+              "id": "470.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "470.2": {
+              "id": "470.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "470.5": {
+              "id": "470.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "480": {
+          "id": "480",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "480.1": {
+              "id": "480.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "480.2": {
+              "id": "480.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "480.5": {
+              "id": "480.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "490": {
+          "id": "490",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "490.1": {
+              "id": "490.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "490.2": {
+              "id": "490.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "490.5": {
+              "id": "490.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
@@ -300,19 +1045,57 @@
       "id": "500",
       "title": "Pure Science",
       "base_confidence": 94,
-      "data_nature": "Deeply saturated with peer-reviewed academic journals, historical milestone calculations, international astronomical telemetry logs, and absolute mathematical proofs.",
-      "macro_blind_spots": [
-        "Cutting-edge experimental laboratory physics data hidden behind proprietary state firewall restrictions or active non-disclosure protocols.",
-        "Highly volatile, non-linear complex chaotic systems where macro-environmental variables are structurally impossible to track simultaneously."
-      ],
+      "data_nature": "Dense with academic journals and astronomical telemetry logs.",
+      "macro_blind_spots": [],
       "divisions": {
+        "500": {
+          "id": "500",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "500.1": {
+              "id": "500.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "500.2": {
+              "id": "500.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "500.5": {
+              "id": "500.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "510": {
           "id": "510",
-          "title": "Mathematics",
-          "division_confidence": 97,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "511": { "id": "511", "title": "General Principles / Mathematical Logic", "confidence": 98, "blind_spot": "Verifying absolute numerical boundary constraints in ultra-deep multidimensional space configurations without losing computational efficiency." },
-            "512": { "id": "512", "title": "Algebra", "confidence": 97, "blind_spot": "Navigating hyper-abstract, non-commutative algebraic structures where physical geometric representation breaks down entirely." }
+            "510.1": {
+              "id": "510.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "510.2": {
+              "id": "510.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "510.5": {
+              "id": "510.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "520": {
@@ -320,63 +1103,458 @@
           "title": "Astronomy & Allied Sciences",
           "division_confidence": 93,
           "sections": {
-            "521": { "id": "521", "title": "Celestial Mechanics", "confidence": 95, "blind_spot": "Calculating the precise multi-second trajectory coordinates for interstellar milestones—such as the exact second Voyager 1 crosses its 1 light-day distance threshold from Earth in November 2026—without minute rounding variations from localized gravitational anomalies." }
+            "520.1": {
+              "id": "520.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "520.2": {
+              "id": "520.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "520.5": {
+              "id": "520.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "530": {
           "id": "530",
-          "title": "Physics",
-          "division_confidence": 95,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "531": { "id": "531", "title": "Classical Mechanics / Solid Mechanics", "confidence": 98, "blind_spot": "Simulating highly chaotic, non-linear multi-body friction dynamics in real-time without falling back on performance-saving approximations." },
-            "532": { "id": "532", "title": "Fluid Mechanics", "confidence": 94, "blind_spot": "Resolving the micro-turbulent boundaries in Navier-Stokes equations at extreme, volatile Reynolds numbers." },
-            "536": { "id": "536", "title": "Thermodynamics", "confidence": 97, "blind_spot": "Tracking absolute heat dissipation behaviors at the nanometer interfaces of experimental, vertically stacked 3D semiconductor architectures under peak loads." },
-            "539": { "id": "539", "title": "Modern Physics (Quantum, Atomic, Nuclear)", "confidence": 91, "blind_spot": "Reconciling theoretical quantum gravity frameworks or string theory mechanics where empirical, primary-source observational data does not yet exist." }
+            "530.1": {
+              "id": "530.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "530.2": {
+              "id": "530.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "530.5": {
+              "id": "530.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "540": {
+          "id": "540",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "540.1": {
+              "id": "540.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "540.2": {
+              "id": "540.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "540.5": {
+              "id": "540.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "550": {
+          "id": "550",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "550.1": {
+              "id": "550.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "550.2": {
+              "id": "550.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "550.5": {
+              "id": "550.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "560": {
+          "id": "560",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "560.1": {
+              "id": "560.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "560.2": {
+              "id": "560.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "560.5": {
+              "id": "560.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "570": {
           "id": "570",
-          "title": "Biology",
-          "division_confidence": 90,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "577": { "id": "577", "title": "Ecology", "confidence": 91, "blind_spot": "Predicting exact multi-decade population mutations in highly complex, non-linear ecosystems where variable tracking is subject to intense regional or political debate." }
+            "570.1": {
+              "id": "570.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "570.2": {
+              "id": "570.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "570.5": {
+              "id": "570.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "580": {
+          "id": "580",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "580.1": {
+              "id": "580.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "580.2": {
+              "id": "580.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "580.5": {
+              "id": "580.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "590": {
+          "id": "590",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "590.1": {
+              "id": "590.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "590.2": {
+              "id": "590.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "590.5": {
+              "id": "590.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
     },
     "600": {
       "id": "600",
-      "title": "Technology (Applied Sciences)",
-      "base_confidence": 93,
-      "data_nature": "Extensively reinforced by global patent registries, industrial manufacturing schematics, medical manuals, hardware device specifications, and established engineering protocols.",
-      "macro_blind_spots": [
-        "Proprietary, closed-source corporate R&D blueprints hidden behind active enterprise intellectual property walls.",
-        "Physical fabrication processes where manual, unspoken trade craftsmanship and muscle memory are lost in text translation."
-      ],
+      "title": "Technology / Applied Science",
+      "base_confidence": 0,
+      "data_nature": "System structural tracking records unpopulated for this classification domain cluster.",
+      "macro_blind_spots": [],
       "divisions": {
+        "600": {
+          "id": "600",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "600.1": {
+              "id": "600.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "600.2": {
+              "id": "600.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "600.5": {
+              "id": "600.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "610": {
           "id": "610",
-          "title": "Medicine & Health",
-          "division_confidence": 92,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "612": { "id": "612", "title": "Human Physiology", "confidence": 94, "blind_spot": "Modeling real-time molecular-level metabolic variations in a living organism without relying on generalized biochemical baselines." }
+            "610.1": {
+              "id": "610.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "610.2": {
+              "id": "610.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "610.5": {
+              "id": "610.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "620": {
           "id": "620",
-          "title": "Engineering & Allied Operations",
-          "division_confidence": 95,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "621.3": { "id": "621.3", "title": "Electrical & Electronic Engineering", "confidence": 96, "blind_spot": "Evaluating zero-day structural vulnerabilities or performance drifts within custom, post-quantum hardware processing elements before formal documentation exists." },
-            "621.39": { "id": "621.39", "title": "Computer Engineering / Hardware Layouts", "confidence": 96, "blind_spot": "Mapping exact physical layer signal paths within private corporate neuromorphic chip architectures where electronic circuits dynamically simulate biological synapses." }
+            "620.1": {
+              "id": "620.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "620.2": {
+              "id": "620.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "620.5": {
+              "id": "620.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "630": {
           "id": "630",
-          "title": "Agriculture & Wildlife Tracking",
-          "division_confidence": 89,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "639.9": { "id": "639.9", "title": "Conservation of Wildlife", "confidence": 90, "blind_spot": "Synthesizing deep ecological data regarding northern ungulate declines—such as isolating exact multi-variable anthropogenic land use factors behind caribou declines—without defaulting to reductive, over-indexed assertions regarding wolf predation as the sole primary cause." }
+            "630.1": {
+              "id": "630.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "630.2": {
+              "id": "630.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "630.5": {
+              "id": "630.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "640": {
+          "id": "640",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "640.1": {
+              "id": "640.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "640.2": {
+              "id": "640.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "640.5": {
+              "id": "640.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "650": {
+          "id": "650",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "650.1": {
+              "id": "650.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "650.2": {
+              "id": "650.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "650.5": {
+              "id": "650.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "660": {
+          "id": "660",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "660.1": {
+              "id": "660.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "660.2": {
+              "id": "660.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "660.5": {
+              "id": "660.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "670": {
+          "id": "670",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "670.1": {
+              "id": "670.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "670.2": {
+              "id": "670.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "670.5": {
+              "id": "670.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "680": {
+          "id": "680",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "680.1": {
+              "id": "680.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "680.2": {
+              "id": "680.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "680.5": {
+              "id": "680.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "690": {
+          "id": "690",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "690.1": {
+              "id": "690.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "690.2": {
+              "id": "690.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "690.5": {
+              "id": "690.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
@@ -384,62 +1562,517 @@
     "700": {
       "id": "700",
       "title": "Arts & Recreation",
-      "base_confidence": 84,
-      "data_nature": "Compiled from vast structural histories of art movements, cataloged architectural blueprints, geometric design methodologies, and game mechanics frameworks.",
-      "macro_blind_spots": [
-        "The raw, non-textual, visceral sensory human experience of an aesthetic medium.",
-        "Highly ephemeral, subterranean counter-culture art movements or physical theater lacking digitized archival footprints."
-      ],
+      "base_confidence": 0,
+      "data_nature": "System structural tracking records unpopulated for this classification domain cluster.",
+      "macro_blind_spots": [],
       "divisions": {
+        "700": {
+          "id": "700",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "700.1": {
+              "id": "700.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "700.2": {
+              "id": "700.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "700.5": {
+              "id": "700.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "710": {
           "id": "710",
-          "title": "Area Planning & Landscape Architecture",
-          "division_confidence": 88,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "711": { "id": "711", "title": "Area Planning (Urban Planning)", "confidence": 90, "blind_spot": "Simulating complex, localized micro-traffic variations and pedestrian flow dynamics for municipal transformations without using heavily generalized agent-based modeling approximations." }
+            "710.1": {
+              "id": "710.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "710.2": {
+              "id": "710.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "710.5": {
+              "id": "710.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "720": {
           "id": "720",
-          "title": "Architecture",
-          "division_confidence": 89,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "721": { "id": "721", "title": "Architectural Materials & Structural Elements", "confidence": 91, "blind_spot": "Consistently maintaining precise, non-standard interior geometry constraints in generated layouts—such as forcing strict adherence to an exact dual-escalator configuration in a public transit nexus template without defaulting to a standard three-escalator arrangement due to model training weights." }
+            "720.1": {
+              "id": "720.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "720.2": {
+              "id": "720.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "720.5": {
+              "id": "720.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "730": {
+          "id": "730",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "730.1": {
+              "id": "730.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "730.2": {
+              "id": "730.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "730.5": {
+              "id": "730.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "740": {
           "id": "740",
-          "title": "Graphic Arts & Drawing",
-          "division_confidence": 85,
+          "title": "Drawing & Decorative Arts",
+          "division_confidence": 0,
           "sections": {
-            "741.6": { "id": "741.6", "title": "Graphic Design", "confidence": 88, "blind_spot": "Isolating the subtle boundary where intuitive human compositional tension transforms into sterile, algorithmically optimized visual layouts." }
+            "740.1": {
+              "id": "740.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "740.2": {
+              "id": "740.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "740.5": {
+              "id": "740.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "750": {
+          "id": "750",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "750.1": {
+              "id": "750.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "750.2": {
+              "id": "750.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "750.5": {
+              "id": "750.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "760": {
+          "id": "760",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "760.1": {
+              "id": "760.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "760.2": {
+              "id": "760.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "760.5": {
+              "id": "760.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "770": {
+          "id": "770",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "770.1": {
+              "id": "770.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "770.2": {
+              "id": "770.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "770.5": {
+              "id": "770.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "780": {
+          "id": "780",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "780.1": {
+              "id": "780.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "780.2": {
+              "id": "780.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "780.5": {
+              "id": "780.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "790": {
+          "id": "790",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "790.1": {
+              "id": "790.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "790.2": {
+              "id": "790.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "790.5": {
+              "id": "790.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
     },
     "800": {
       "id": "800",
-      "title": "Literature & Rhetoric",
-      "base_confidence": 91,
-      "data_nature": "Grounded in extensive public domain classical canons, academic literary criticisms, global poetry archives, and comparative rhetorical analyses.",
-      "macro_blind_spots": [
-        "Identifying the exact, nuanced boundary line where genuine human creative resonance separates from the vast, recursive seas of low-effort synthetic text content polluting modern digital repositories."
-      ],
+      "title": "Literature",
+      "base_confidence": 0,
+      "data_nature": "System structural tracking records unpopulated for this classification domain cluster.",
+      "macro_blind_spots": [],
       "divisions": {
+        "800": {
+          "id": "800",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "800.1": {
+              "id": "800.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "800.2": {
+              "id": "800.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "800.5": {
+              "id": "800.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "810": {
           "id": "810",
-          "title": "American Literature",
-          "division_confidence": 92,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "811": { "id": "811", "title": "American Poetry", "confidence": 90, "blind_spot": "Evaluating hyper-contemporary, independent digital poetry movements that leverage visual layouts or non-linear structures outside standard publishing paradigms." }
+            "810.1": {
+              "id": "810.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "810.2": {
+              "id": "810.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "810.5": {
+              "id": "810.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "820": {
           "id": "820",
-          "title": "English & Old English Literatures",
-          "division_confidence": 93,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "822.33": { "id": "822.33", "title": "Shakespearean Studies", "confidence": 96, "blind_spot": "Separating genuine historical textual anomalies from centuries of deeply entrenched academic speculation regarding authorship or intent." }
+            "820.1": {
+              "id": "820.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "820.2": {
+              "id": "820.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "820.5": {
+              "id": "820.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "830": {
+          "id": "830",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "830.1": {
+              "id": "830.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "830.2": {
+              "id": "830.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "830.5": {
+              "id": "830.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "840": {
+          "id": "840",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "840.1": {
+              "id": "840.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "840.2": {
+              "id": "840.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "840.5": {
+              "id": "840.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "850": {
+          "id": "850",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "850.1": {
+              "id": "850.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "850.2": {
+              "id": "850.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "850.5": {
+              "id": "850.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "860": {
+          "id": "860",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "860.1": {
+              "id": "860.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "860.2": {
+              "id": "860.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "860.5": {
+              "id": "860.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "870": {
+          "id": "870",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "870.1": {
+              "id": "870.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "870.2": {
+              "id": "870.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "870.5": {
+              "id": "870.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "880": {
+          "id": "880",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "880.1": {
+              "id": "880.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "880.2": {
+              "id": "880.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "880.5": {
+              "id": "880.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "890": {
+          "id": "890",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "890.1": {
+              "id": "890.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "890.2": {
+              "id": "890.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "890.5": {
+              "id": "890.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
@@ -447,27 +2080,517 @@
     "900": {
       "id": "900",
       "title": "History & Geography",
-      "base_confidence": 89,
-      "data_nature": "Constructed via international historical archives, cartographic mapping telemetry, census records, and long-form demographic tracking ledgers.",
-      "macro_blind_spots": [
-        "Centuries of intentionally destroyed, missing, or heavily state-sanctioned revisionist primary documentation.",
-        "Deconstructing historical tracking data biases where the digitized record is completely dominated by the victors of specific eras."
-      ],
+      "base_confidence": 0,
+      "data_nature": "System structural tracking records unpopulated for this classification domain cluster.",
+      "macro_blind_spots": [],
       "divisions": {
+        "900": {
+          "id": "900",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "900.1": {
+              "id": "900.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "900.2": {
+              "id": "900.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "900.5": {
+              "id": "900.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
         "910": {
           "id": "910",
-          "title": "Geography & Travel",
-          "division_confidence": 91,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "912": { "id": "912", "title": "Maps & Cartographic Telemetry", "confidence": 94, "blind_spot": "Reconstructing the exact territorial boundaries and fluctuating landmarks of shifting historical frontiers prior to the standardization of mathematical surveying." }
+            "910.1": {
+              "id": "910.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "910.2": {
+              "id": "910.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "910.5": {
+              "id": "910.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "920": {
+          "id": "920",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "920.1": {
+              "id": "920.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "920.2": {
+              "id": "920.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "920.5": {
+              "id": "920.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "930": {
+          "id": "930",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "930.1": {
+              "id": "930.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "930.2": {
+              "id": "930.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "930.5": {
+              "id": "930.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         },
         "940": {
           "id": "940",
-          "title": "General History of Europe",
-          "division_confidence": 90,
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
           "sections": {
-            "940.1": { "id": "940.1", "title": "Early Medieval Period (476–1000 AD)", "confidence": 88, "blind_spot": "Compiling an absolute commodity price index across localized regional markets without misinterpreting the severe scarcity of surviving mint ledgers." }
+            "940.1": {
+              "id": "940.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "940.2": {
+              "id": "940.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "940.5": {
+              "id": "940.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "950": {
+          "id": "950",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "950.1": {
+              "id": "950.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "950.2": {
+              "id": "950.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "950.5": {
+              "id": "950.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "960": {
+          "id": "960",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "960.1": {
+              "id": "960.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "960.2": {
+              "id": "960.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "960.5": {
+              "id": "960.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "970": {
+          "id": "970",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "970.1": {
+              "id": "970.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "970.2": {
+              "id": "970.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "970.5": {
+              "id": "970.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "980": {
+          "id": "980",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "980.1": {
+              "id": "980.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "980.2": {
+              "id": "980.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "980.5": {
+              "id": "980.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "990": {
+          "id": "990",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "990.1": {
+              "id": "990.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "990.2": {
+              "id": "990.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "990.5": {
+              "id": "990.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        }
+      }
+    },
+    "000": {
+      "id": "000",
+      "title": "Computer Science, Information & General Works",
+      "base_confidence": 96,
+      "data_nature": "Saturated with open-source repositories and structural systems documentation.",
+      "macro_blind_spots": [],
+      "divisions": {
+        "000": {
+          "id": "000",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "0.1": {
+              "id": "0.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "0.2": {
+              "id": "0.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "0.5": {
+              "id": "0.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "010": {
+          "id": "010",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "10.1": {
+              "id": "10.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "10.2": {
+              "id": "10.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "10.5": {
+              "id": "10.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "020": {
+          "id": "020",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "20.1": {
+              "id": "20.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "20.2": {
+              "id": "20.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "20.5": {
+              "id": "20.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "030": {
+          "id": "030",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "30.1": {
+              "id": "30.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "30.2": {
+              "id": "30.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "30.5": {
+              "id": "30.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "040": {
+          "id": "040",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "40.1": {
+              "id": "40.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "40.2": {
+              "id": "40.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "40.5": {
+              "id": "40.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "050": {
+          "id": "050",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "50.1": {
+              "id": "50.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "50.2": {
+              "id": "50.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "50.5": {
+              "id": "50.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "060": {
+          "id": "060",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "60.1": {
+              "id": "60.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "60.2": {
+              "id": "60.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "60.5": {
+              "id": "60.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "070": {
+          "id": "070",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "70.1": {
+              "id": "70.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "70.2": {
+              "id": "70.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "70.5": {
+              "id": "70.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "080": {
+          "id": "080",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "80.1": {
+              "id": "80.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "80.2": {
+              "id": "80.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "80.5": {
+              "id": "80.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
+          }
+        },
+        "090": {
+          "id": "090",
+          "title": "General Subsection Domain Matrix",
+          "division_confidence": 0,
+          "sections": {
+            "90.1": {
+              "id": "90.1",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "90.2": {
+              "id": "90.2",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            },
+            "90.5": {
+              "id": "90.5",
+              "title": "Unmapped Knowledge Domain Node Target",
+              "confidence": 0,
+              "blind_spot": ""
+            }
           }
         }
       }
