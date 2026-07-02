@@ -328,7 +328,9 @@ Provide a syntactically pristine JSON block matching this exact structure (do no
             console.warn("External JSON file restricted or missing context. Defaulting to local fallback data block configuration.");
             globalData = fallbackManifest;
         } finally {
-            document.getElementById('error-overlay').style.display = 'none';
+            // FORCE DISMISS OVERLAY FIRST SO CONTENT IS UNLOCKED INSTANTLY
+            const overlay = document.getElementById('error-overlay');
+            if (overlay) overlay.style.display = 'none';
             initializeUI();
         }
     }
